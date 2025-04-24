@@ -45,14 +45,6 @@ class AssetPresenter extends Presenter
                 'visible' => true,
                 'formatter' => 'hardwareLinkFormatter',
             ], [
-                'field' => 'image',
-                'searchable' => false,
-                'sortable' => true,
-                'switchable' => true,
-                'title' => trans('admin/hardware/table.image'),
-                'visible' => true,
-                'formatter' => 'imageFormatter',
-            ], [
                 'field' => 'asset_tag',
                 'searchable' => true,
                 'sortable' => true,
@@ -60,7 +52,15 @@ class AssetPresenter extends Presenter
                 'title' => trans('admin/hardware/table.asset_tag'),
                 'visible' => true,
                 'formatter' => 'hardwareLinkFormatter',
-            ], [
+            ],[
+                'field' => 'image',
+                'searchable' => false,
+                'sortable' => true,
+                'switchable' => true,
+                'title' => trans('admin/hardware/table.image'),
+                'visible' => true,
+                'formatter' => 'imageFormatter',
+            ],  [
                 'field' => 'serial',
                 'searchable' => true,
                 'sortable' => true,
@@ -318,12 +318,18 @@ class AssetPresenter extends Presenter
         // they are presented in the blade view. If we escape them here, custom fields with quotes in their
         // name can break the listings page. - snipe
         foreach ($fields as $field) {
+            // echo "<script>console.log('" . json_encode($field->db_column) . "');</script>";
+            // $jsonField = json_encode($layout);
+            //             // $logValue = 'custom_fields.' . $field->name. $field->db_column;
+            //             echo "<script>
+            //                 console.log($jsonField); // Hiển thị thông tin trong console
+            //             </script>";
             $layout[] = [
-                'field' => 'custom_fields.'.$field->db_column,
+                'field' => 'custom_fields.' . $field->db_column,
                 'searchable' => true,
                 'sortable' => true,
                 'switchable' => true,
-                'title' => $field->name,
+                'title' =>  trans('general.' . $field->db_column),
                 'formatter'=> 'customFieldsFormatter',
                 'escape' => true,
                 'class' => ($field->field_encrypted == '1') ? 'css-padlock' : '',
@@ -349,7 +355,6 @@ class AssetPresenter extends Presenter
             'title' => trans('table.actions'),
             'formatter' => 'hardwareActionsFormatter',
         ];
-
         return json_encode($layout);
     }
 

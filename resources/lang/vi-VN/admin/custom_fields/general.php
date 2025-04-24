@@ -3,7 +3,7 @@
 return [
     'custom_fields'		        => 'Trường tùy chỉnh',
     'manage'                    => 'Manage',
-    'field'		                => 'Cánh đồng',
+    'field'		                => 'Trường',
     'about_fieldsets_title'		=> 'Giới thiệu về các trường',
     'about_fieldsets_text'		=> 'Các trường cho phép bạn tạo các nhóm trường tuỳ chỉnh thường xuyên được sử dụng lại cho các mô hình tài sản cụ thể.',
     'custom_format'             => 'Định dạng tuỳ chỉnh...',
@@ -22,17 +22,17 @@ return [
     'field_format'            => 'định dạng',
     'field_custom_format'     => 'Định dạng Tuỳ chỉnh',
     'field_custom_format_help'     => 'Trường này cho phép bạn sử dụng biểu thức regex để xác thực. Nó sẽ bắt đầu bằng "regex:" - ví dụ: để xác thực rằng giá trị trường tùy chỉnh chứa IMEI hợp lệ (15 chữ số), bạn sẽ dùng <code>regex:/^[0-9]{15}$/</code>.',
-    'required'   		          => 'Cần thiết',
+    'required'   		          => 'Bắt buộc',
     'req'   		              => 'Req.',
     'used_by_models'   		    => 'Được sử dụng theo mô hình',
     'order'   		            => 'Gọi món',
     'create_fieldset'         => 'New Fieldset',
     'update_fieldset'         => 'Update Fieldset',
-    'fieldset_does_not_exist'   => 'Fieldset :id does not exist',
+    'fieldset_does_not_exist'   => 'Fieldset :id không tồn tại',
     'fieldset_updated'         => 'Fieldset updated',
-    'create_fieldset_title' => 'Create a new fieldset',
+    'create_fieldset_title' => 'Tạo một trường mới.',
     'create_field'            => 'Trường tùy chỉnh mới',
-    'create_field_title' => 'Create a new custom field',
+    'create_field_title' => 'Tạo một trường tùy chỉnh mới.',
     'value_encrypted'      	        => 'Giá trị của trường này được mã hóa trong cơ sở dữ liệu. Chỉ những người dùng quản trị mới có thể xem được giá trị được giải mã',
     'show_in_email'     => 'Bao gồm giá trị của trường này trong email thanh toán được gửi tới người dùng? Các trường được mã hóa không thể được bao gồm trong email',
     'show_in_email_short' => 'Include in emails',
@@ -59,5 +59,5 @@ return [
     'encrypted_options' => 'This field is encrypted, so some display options will not be available.',
     'display_checkin' => 'Display in checkin forms',
     'display_checkout' => 'Display in checkout forms',
-
+    
 ];

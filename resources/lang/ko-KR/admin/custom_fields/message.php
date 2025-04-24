@@ -55,6 +55,7 @@ return array(
         'error' => 'Error validating default fieldset values.',
 
     ),
+    'placeholder' => '새 필드를 추가하다.'
 
 
 

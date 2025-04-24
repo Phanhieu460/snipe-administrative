@@ -55,6 +55,7 @@ return array(
         'error' => 'Error validating default fieldset values.',
 
     ),
+    'placeholder' => 'Thêm trường mới.'
 
 
 

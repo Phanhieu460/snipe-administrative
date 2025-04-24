@@ -7,7 +7,7 @@ dir="{{ Helper::determineLanguageDirection() }}">
     <title>
         @section('title')
         @show
-        :: {{ $snipeSettings->site_name }}
+        :: {{ trans('general.' . $snipeSettings->site_name) }}
     </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -120,7 +120,7 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                              src="{{ Storage::disk('public')->url($snipeSettings->logo) }}"
                                              alt="{{ $snipeSettings->site_name }} logo">
                                     @endif
-                                    {{ $snipeSettings->site_name }}
+                                    {{ trans('general.' . $snipeSettings->site_name) }}
                                 </a>
                             @elseif ($snipeSettings->brand == '2')
                                 <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
@@ -129,11 +129,11 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                              src="{{ Storage::disk('public')->url($snipeSettings->logo) }}"
                                              alt="{{ $snipeSettings->site_name }} logo">
                                     @endif
-                                    <span class="sr-only">{{ $snipeSettings->site_name }}</span>
+                                    <span class="sr-only">{{ trans('general.' . $snipeSettings->site_name) }}</span>
                                 </a>
                             @else
                                 <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
-                                    {{ $snipeSettings->site_name }}
+                                    {{ trans('general.' . $snipeSettings->site_name) }}
                                 </a>
                             @endif
                         </div>
@@ -150,15 +150,15 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                     </a>
                                 </li>
                             @endcan
-                            @can('view', \App\Models\License::class)
+                            <!-- @can('view', \App\Models\License::class)
                                 <li aria-hidden="true"{!! (Request::is('licenses*') ? ' class="active"' : '') !!}>
                                     <a href="{{ route('licenses.index') }}" {{$snipeSettings->shortcuts_enabled == 1 ? "accesskey=2" : ''}} tabindex="-1" data-tooltip="true" data-placement="bottom" data-title="{{ trans('general.licenses') }}">
                                         <x-icon type="licenses" class="fa-fw" />
                                         <span class="sr-only">{{ trans('general.licenses') }}</span>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('index', \App\Models\Accessory::class)
+                            @endcan -->
+                            <!-- @can('index', \App\Models\Accessory::class)
                                 <li aria-hidden="true"{!! (Request::is('accessories*') ? ' class="active"' : '') !!}>
                                     <a href="{{ route('accessories.index') }}" {{$snipeSettings->shortcuts_enabled == 1 ? "accesskey=3" : ''}} tabindex="-1" data-tooltip="true" data-placement="bottom" data-title="{{ trans('general.accessories') }}">
                                         <x-icon type="accessories" class="fa-fw" />
@@ -181,7 +181,7 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                         <span class="sr-only">{{ trans('general.components') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
 
                             @can('index', \App\Models\Asset::class)
                                 <li>
@@ -221,38 +221,38 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                                 </a>
                                             </li>
                                         @endcan
-                                        @can('create', \App\Models\License::class)
+                                        <!-- @can('create', \App\Models\License::class)
                                             <li{!! (Request::is('licenses/create') ? ' class="active"' : '') !!}>
                                                 <a href="{{ route('licenses.create') }}" tabindex="-1">
                                                     <x-icon type="licenses" />
                                                     {{ trans('general.license') }}
                                                 </a>
                                             </li>
-                                        @endcan
-                                        @can('create', \App\Models\Accessory::class)
+                                        @endcan -->
+                                        <!-- @can('create', \App\Models\Accessory::class)
                                             <li {!! (Request::is('accessories/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('accessories.create') }}" tabindex="-1">
                                                     <x-icon type="accessories" />
                                                     {{ trans('general.accessory') }}
                                                 </a>
                                             </li>
-                                        @endcan
-                                        @can('create', \App\Models\Consumable::class)
+                                        @endcan -->
+                                        <!-- @can('create', \App\Models\Consumable::class)
                                             <li {!! (Request::is('consunmables/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('consumables.create') }}" tabindex="-1">
                                                     <x-icon type="consumables" />
                                                     {{ trans('general.consumable') }}
                                                 </a>
                                             </li>
-                                        @endcan
-                                        @can('create', \App\Models\Component::class)
+                                        @endcan -->
+                                        <!-- @can('create', \App\Models\Component::class)
                                             <li {!! (Request::is('components/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('components.create') }}" tabindex="-1">
                                                     <x-icon type="components" />
                                                     {{ trans('general.component') }}
                                                 </a>
                                             </li>
-                                        @endcan
+                                        @endcan -->
                                         @can('create', \App\Models\User::class)
                                             <li {!! (Request::is('users/create') ? 'class="active"' : '') !!}>
                                                 <a href="{{ route('users.create') }}" tabindex="-1">
@@ -593,15 +593,15 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                 </ul>
                             </li>
                         @endcan
-                        @can('view', \App\Models\License::class)
+                        <!-- @can('view', \App\Models\License::class)
                             <li{!! (Request::is('licenses*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('licenses.index') }}">
                                     <x-icon type="licenses" class="fa-fw"/>
                                     <span>{{ trans('general.licenses') }}</span>
                                 </a>
                             </li>
-                        @endcan
-                        @can('index', \App\Models\Accessory::class)
+                        @endcan -->
+                        <!-- @can('index', \App\Models\Accessory::class)
                             <li{!! (Request::is('accessories*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('accessories.index') }}">
                                     <x-icon type="accessories" class="fa-fw" />
@@ -616,23 +616,23 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                     <span>{{ trans('general.consumables') }}</span>
                                 </a>
                             </li>
-                        @endcan
-                        @can('view', \App\Models\Component::class)
+                        @endcan -->
+                        <!-- @can('view', \App\Models\Component::class)
                             <li{!! (Request::is('components*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('components.index') }}">
                                     <x-icon type="components" class="fa-fw" />
                                     <span>{{ trans('general.components') }}</span>
                                 </a>
                             </li>
-                        @endcan
-                        @can('view', \App\Models\PredefinedKit::class)
+                        @endcan -->
+                        <!-- @can('view', \App\Models\PredefinedKit::class)
                             <li{!! (Request::is('kits') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('kits.index') }}">
                                     <x-icon type="kits" class="fa-fw" />
                                     <span>{{ trans('general.kits') }}</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan -->
 
                         @can('view', \App\Models\User::class)
                             <li{!! (Request::is('users*') ? ' class="active"' : '') !!}>

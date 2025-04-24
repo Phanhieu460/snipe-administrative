@@ -599,5 +599,13 @@ return [
     'generic_model_not_found' => 'That :model was not found or you do not have permission to access it',
     'deleted_models' => 'Deleted Asset Models',
     'deleted_users' => 'Deleted Users',
+    'site_name' => '행정재산 관리',
+    '_snipeit_quy_cach_5' => '규격', //key lấy theo trường db_column thuộc bảng custom_fields
+    '_snipeit_don_vi_6' => '단위',
+    '_snipeit_noi_su_dung_7' => '사용 장소',
+    '_snipeit_ngay_di_chuyen_8' => '이동 날짜',
+    '_snipeit_ngay_sua_chua_9' => '수리 날짜',
+    '_snipeit_ngay_tieu_huy_10' =>'폐기 날짜',
+    '_snipeit_bo_phan_4' => '부서'
 
 ];

@@ -572,7 +572,7 @@ return [
     'quickscan_bulk_help' => 'Checking this box will edit the asset record to reflect this new location. Leaving it unchecked will simply note the location in the audit log. Note that if this asset is checked out, it will not change the location of the person, asset or location it is checked out to.',
     'whoops' => 'Whoops!',
     'something_went_wrong' => 'Something went wrong with your request.',
-    'close' => 'Close',
+    'close' => 'Đóng',
     'expires' => 'Hết hạn',
     'map_fields'=> 'Map :item_type Fields',
     'remaining_var' => ':count Remaining',
@@ -599,5 +599,13 @@ return [
     'generic_model_not_found' => 'That :model was not found or you do not have permission to access it',
     'deleted_models' => 'Deleted Asset Models',
     'deleted_users' => 'Deleted Users',
+    'site_name' => 'Quản Lý Tài Sản Hành Chính',
+    '_snipeit_quy_cach_5' => 'Quy cách', //key lấy theo trường db_column thuộc bảng custom_fields
+    '_snipeit_don_vi_6' => 'Đơn vị',
+    '_snipeit_noi_su_dung_7' => 'Nơi sử dụng',
+    '_snipeit_ngay_di_chuyen_8' => 'Ngày di chuyển',
+    '_snipeit_ngay_sua_chua_9' => 'Ngày sửa chữa',
+    '_snipeit_ngay_tieu_huy_10' =>'Ngày tiêu hủy',
+    '_snipeit_bo_phan_4' => 'Bộ phận',
 
 ];
