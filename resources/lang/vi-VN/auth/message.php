@@ -42,6 +42,6 @@ return array(
         'error'   => 'Có vấn đề khi cố gắng khởi tạo lại mật khẩu của bạn, xin thử lại lần nữa.',
         'success' => 'Mật khẩu của bạn đã được khởi tạo lại thành công.',
     ),
-
+    'resetpassword' => 'Vui lòng liên hệ phòng IT.'
 
 );

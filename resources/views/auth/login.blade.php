@@ -4,7 +4,8 @@
 {{-- Page content --}}
 @section('content')
 
-    <form role="form" action="{{ url('/login') }}" method="POST" autocomplete="{{ (config('auth.login_autocomplete') === true) ? 'on' : 'off'  }}">
+<form role="form" action="{{ url('/login') }}" method="POST" autocomplete="{{ (config('auth.login_autocomplete') === true) ? 'on' : 'off'  }}">
+        <!-- <h4>{{ ($snipeSettings) && (trans('general.' . $snipeSettings->site_name)) ? trans('general.' . $snipeSettings->site_name) : 'Snipe-IT' }}</h> -->
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
 

@@ -642,14 +642,14 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                 </a>
                             </li>
                         @endcan
-                        @can('import')
+                        <!-- @can('import')
                             <li{!! (Request::is('import/*') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('imports.index') }}">
                                     <x-icon type="import" class="fa-fw" />
                                     <span>{{ trans('general.import') }}</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan -->
 
                         @can('backend.interact')
                             <li class="treeview {!! in_array(Request::route()->getName(),App\Helpers\Helper::SettingUrls()) ? ' active': '' !!}">

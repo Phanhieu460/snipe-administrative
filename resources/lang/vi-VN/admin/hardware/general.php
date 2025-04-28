@@ -23,7 +23,7 @@ return [
     'requestable_status_warning' => 'Không thay đổi trạng thái yêu cầu',
     'restore'  					=> 'Phục hồi tài sản',
     'pending'  					=> 'Đang chờ',
-    'undeployable'  			=> 'Không cho phép cấp phát',
+    'undeployable'  			=> 'Đã hủy',
     'undeployable_tooltip'  	=> 'Tài sản này có nhãn trạng thái không thể triển khai và không thể kiểm tra vào lúc này.',
     'view'  					=> 'Xem tài sản',
     'csv_error' => 'Có lỗi trong file CSV của bạn:',

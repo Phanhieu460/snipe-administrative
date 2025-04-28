@@ -48,9 +48,9 @@
       </a>
   </div><!-- ./col -->
 
-  <div class="col-lg-2 col-xs-6">
+  <!-- small box -->
+  <!-- <div class="col-lg-2 col-xs-6">
      <a href="{{ route('licenses.index') }}">
-    <!-- small box -->
     <div class="dashboard small-box bg-maroon">
       <div class="inner">
         <h3>{{ number_format($counts['license']) }}</h3>
@@ -66,11 +66,12 @@
         @endcan
     </div>
      </a>
-  </div><!-- ./col -->
+  </div> -->
+  <!-- ./col -->
 
 
-  <div class="col-lg-2 col-xs-6">
-    <!-- small box -->
+  <!-- small box -->
+  <!-- <div class="col-lg-2 col-xs-6">
       <a href="{{ route('accessories.index') }}">
     <div class="dashboard small-box bg-orange">
       <div class="inner">
@@ -87,10 +88,11 @@
       @endcan
     </div>
       </a>
-  </div><!-- ./col -->
+  </div> -->
+  <!-- ./col -->
 
-  <div class="col-lg-2 col-xs-6">
-    <!-- small box -->
+  <!-- small box -->
+  <!-- <div class="col-lg-2 col-xs-6">
 
       <a href="{{ route('consumables.index') }}">
     <div class="dashboard small-box bg-purple">
@@ -107,11 +109,12 @@
         </a>
       @endcan
     </div>
-  </div><!-- ./col -->
+  </div> -->
+  <!-- ./col -->
 
-  <div class="col-lg-2 col-xs-6">
+  <!-- small box -->
+  <!-- <div class="col-lg-2 col-xs-6">
     <a href="{{ route('components.index') }}">
-   <!-- small box -->
    <div class="dashboard small-box bg-yellow">
      <div class="inner">
        <h3>{{ number_format($counts['component']) }}</h3>
@@ -127,7 +130,8 @@
        @endcan
    </div>
     </a>
- </div><!-- ./col -->
+ </div> -->
+ <!-- ./col -->
 
  <div class="col-lg-2 col-xs-6">
     <a href="{{ route('users.index') }}">

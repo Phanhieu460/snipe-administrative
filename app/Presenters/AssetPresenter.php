@@ -40,9 +40,9 @@ class AssetPresenter extends Presenter
             ], [
                 'field' => 'name',
                 'searchable' => true,
-                'sortable' => true,
+                'sortable' => false,
                 'title' => trans('admin/hardware/form.name'),
-                'visible' => true,
+                'visible' => false,
                 'formatter' => 'hardwareLinkFormatter',
             ], [
                 'field' => 'asset_tag',
@@ -63,9 +63,9 @@ class AssetPresenter extends Presenter
             ],  [
                 'field' => 'serial',
                 'searchable' => true,
-                'sortable' => true,
+                'sortable' => false,
                 'title' => trans('admin/hardware/form.serial'),
-                'visible' => true,
+                'visible' => false,
                 'formatter' => 'hardwareLinkFormatter',
             ],  [
                 'field' => 'model',
@@ -77,7 +77,7 @@ class AssetPresenter extends Presenter
             ], [
                 'field' => 'model_number',
                 'searchable' => true,
-                'sortable' => true,
+                'sortable' => false,
                 'title' => trans('admin/models/table.modelnumber'),
                 'visible' => false,
             ], [

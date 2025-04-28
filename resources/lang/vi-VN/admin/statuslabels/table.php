@@ -14,6 +14,9 @@ return array(
     'status_type'   => 'Loại tình trạng',
     'show_in_nav'   => 'Hiển thị trong trình đơn bên cạnh',
     'title'      	=> 'Nhãn tình trạng',
-    'undeployable'  => 'Không cho phép cấp phát',
+    'undeployable'  => 'Đã hủy',
     'update'      	=> 'Cập nhật tình trạng nhãn',
+    'chuacapphat' => 'Chưa cấp phát',
+    'dacapphat' => 'Đã cấp phát',
+    'dahuy'=> 'Đã hủy',
 );
