@@ -19,7 +19,7 @@ return [
     'print_assigned'    => 'In tất cả tài sản đã cấp phát',
     'email_assigned'    => 'Danh sách email của tất cả được chỉ định',
     'user_notified'     => 'Người dùng đã được gửi qua email danh sách các thiết bị hiện được chỉ định của họ.',
-    'users_notified'    => 'The user has been emailed a list of their currently assigned items.|:count users have been emailed a list of their currently assigned items.',
+    'users_notified'    => 'Người dùng đã nhận được email chứa danh sách các thiết bị hiện tại mà họ đang sử dụng. | :count người dùng đã nhận được email chứa danh sách các thiết bị hiện tại mà họ đang sử dụng..',
     'users_notified_warning' => ':count user has been emailed a list of their currently assigned items, however :no_email users did not have an email address so could not be emailed.|:count users have been emailed a list of their currently assigned items, however :no_email user(s) did not have an email address so could not be emailed.',
     'auto_assign_label' => 'Bao gồm người dùng này khi giấy phép đủ điều kiện tự động chỉ định',
     'auto_assign_help'  => 'Bỏ qua người dùng này trong chế độ tự động chỉ định giấy phép',

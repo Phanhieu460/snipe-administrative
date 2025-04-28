@@ -6,7 +6,7 @@ return [
     'archived'  				=> 'Đã lưu trữ',
     'asset'  					=> 'Tài sản',
     'bulk_checkout'             => 'Thanh toán hàng loạt',
-    'bulk_checkin'              => 'Bulk Checkin',
+    'bulk_checkin'              => 'Thu hồi hàng loạt',
     'checkin'  					=> 'Checkin tài sản',
     'checkout'  				=> 'Tài sản thanh toán',
     'clone'  					=> 'Nhân đôi tài sản',
@@ -15,8 +15,8 @@ return [
     'delete_confirm'            => 'Bạn có chắc chắn muốn xóa tài sản này không?',
     'edit'  					=> 'Sửa tài sản',
     'model_deleted'  			=> 'Model tài sản này đã bị xóa. Vui lòng khôi phục lại model trước khi khôi phục tài sản.',
-    'model_invalid'             => 'This model for this asset is invalid.',
-    'model_invalid_fix'         => 'The asset must be updated use a valid asset model before attempting to check it in or out, or to audit it.',
+    'model_invalid'             => 'Model của thiết bị này không hợp lệ..',
+    'model_invalid_fix'         => 'Thiết bị phải được cập nhật với một model hợp lệ trước khi thực hiện check-in, check-out hoặc kiểm kê..',
     'requestable'               => 'Cho phép đề xuất',
     'requested'				    => 'Yêu cầu',
     'not_requestable'           => 'Không cho phép đề xuất',
@@ -27,7 +27,7 @@ return [
     'undeployable_tooltip'  	=> 'Tài sản này có nhãn trạng thái không thể triển khai và không thể kiểm tra vào lúc này.',
     'view'  					=> 'Xem tài sản',
     'csv_error' => 'Có lỗi trong file CSV của bạn:',
-    'import_text' => '<p>Upload a CSV that contains asset history. The assets and users MUST already exist in the system, or they will be skipped. Matching assets for history import happens against the asset tag. We will try to find a matching user based on the user\'s name you provide, and the criteria you select below. If you do not select any criteria below, it will simply try to match on the username format you configured in the <code>Admin &gt; General Settings</code>.</p><p>Fields included in the CSV must match the headers: <strong>Asset Tag, Name, Checkout Date, Checkin Date</strong>. Any additional fields will be ignored. </p><p>Checkin Date: blank or future checkin dates will checkout items to associated user.  Excluding the Checkin Date column will create a checkin date with todays date.</p>
+    'import_text' => '<p>Tải lên một file CSV chứa lịch sử thiết bị. Các thiết bị và người dùng phải đã tồn tại trong hệ thống, nếu không sẽ bị bỏ qua. Việc khớp thiết bị khi nhập lịch sử sẽ dựa trên mã tag của thiết bị. Chúng tôi sẽ cố gắng tìm một người dùng phù hợp dựa trên tên người dùng mà bạn cung cấp và các tiêu chí bạn chọn dưới đây. Nếu bạn không chọn tiêu chí nào, hệ thống sẽ chỉ cố gắng khớp theo định dạng tên người dùng mà bạn đã cấu hình trong <code>Quản trị > Cài đặt chung</code>.</p><p>Các trường trong file CSV phải khớp với các tiêu đề: <strong>Asset Tag, Name, Checkout Date, Checkin Date</strong>. Mọi trường dữ liệu bổ sung sẽ bị bỏ qua.</p><p>Ngày check-in: nếu để trống hoặc ngày check-in trong tương lai, thiết bị sẽ được check-out cho người dùng liên quan. Nếu không bao gồm cột Ngày Check-in, hệ thống sẽ tạo một ngày check-in là ngày hiện tại.</p>
     ',
     'csv_import_match_f-l' => 'Try to match users by <strong>firstname.lastname</strong> (<code>jane.smith</code>) format',
     'csv_import_match_initial_last' => 'Try to match users by <strong>first initial last name</strong> (<code>jsmith</code>) format',

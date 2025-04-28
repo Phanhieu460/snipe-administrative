@@ -2,32 +2,32 @@
 
 return [
 
-    'undeployable' 		 => '<strong>Warning: </strong> This asset has been marked as currently undeployable. If this status has changed, please update the asset status.',
+    'undeployable' 		 => '<strong>Warning: </strong> Thiết bị này đã được đánh dấu là không thể triển khai tại thời điểm này. Nếu trạng thái này đã thay đổi, vui lòng cập nhật trạng thái thiết bị..',
     'does_not_exist' 	 => 'Tài sản không tồn tại.',
-    'does_not_exist_var' => 'Asset with tag :asset_tag not found.',
-    'no_tag' 	         => 'No asset tag provided.',
+    'does_not_exist_var' => 'Thiết bị với mã tag :asset_tag không được tìm thấy.',
+    'no_tag' 	         => 'Không cung cấp mã tag thiết bị.',
     'does_not_exist_or_not_requestable' => 'Tài sản không tồn tại hoặc không cho phép đề xuất.',
     'assoc_users'	 	 => 'Tài sản này hiện tại đã được checkout đến một người dùng và không thể xóa. Đầu tiên xin vui lòng kiểm tra lại tài sản, và cố gắng thử lần nữa. ',
     'warning_audit_date_mismatch' 	=> 'This asset\'s next audit date (:next_audit_date) is before the last audit date (:last_audit_date). Please update the next audit date.',
-    'labels_generated'   => 'Labels were successfully generated.',
-    'error_generating_labels' => 'Error while generating labels.',
-    'no_assets_selected' => 'No assets selected.',
+    'labels_generated'   => 'Nhãn đã được tạo thành công.',
+    'error_generating_labels' => 'Lỗi khi tạo nhãn.',
+    'no_assets_selected' => 'Chưa chọn thiết bị nào.',
 
     'create' => [
         'error'   		=> 'Tài sản chưa được tạo, xin vui lòng thử lại. :(',
         'success' 		=> 'Tài sản được tạo thành công. :)',
         'success_linked' => 'Asset with tag :tag was created successfully. <strong><a href=":link" style="color: white;">Click here to view</a></strong>.',
-        'multi_success_linked' => 'Asset with tag :links was created successfully.|:count assets were created succesfully. :links.',
-        'partial_failure' => 'An asset was unable to be created. Reason: :failures|:count assets were unable to be created. Reasons: :failures',
+        'multi_success_linked' => 'Thiết bị với mã tag :links đã được tạo thành công. | :count thiết bị đã được tạo thành công. :links.',
+        'partial_failure' => 'Một thiết bị không thể được tạo. Lý do: :failures | :count thiết bị không thể được tạo. Lý do: :failures',
     ],
 
     'update' => [
         'error'   			=> 'Tài sản chưa được cập nhật. Bạn hãy thử lại',
         'success' 			=> 'Tài sản được cập nhật thành công.',
-        'encrypted_warning' => 'Asset updated successfully, but encrypted custom fields were not due to permissions',
+        'encrypted_warning' => 'Thiết bị đã được cập nhật thành công, nhưng các trường tùy chỉnh mã hóa không được cập nhật do quyền hạn',
         'nothing_updated'	=>  'Bạn đã không chọn trường nào vì thế đã không có gì được cập nhật.',
         'no_assets_selected'  =>  'Không có tài sản nào được chọn, vì vậy không có gì cập nhật.',
-        'assets_do_not_exist_or_are_invalid' => 'Selected assets cannot be updated.',
+        'assets_do_not_exist_or_are_invalid' => 'Các thiết bị đã chọn không thể cập nhật.',
     ],
 
     'restore' => [
@@ -38,7 +38,7 @@ return [
     ],
 
     'audit' => [
-        'error'   		=> 'Asset audit unsuccessful: :error ',
+        'error'   		=> 'lỗi: Kiểm kê thiết bị không thành công ',
         'success' 		=> 'Kiểm tra thành công tài sản.',
     ],
 
@@ -56,14 +56,14 @@ return [
     ],
 
     'import' => [
-        'import_button'         => 'Process Import',
+        'import_button'         => 'Xử lý nhập khẩu',
         'error'                 => 'Một số mặt hàng không nhập chính xác.',
         'errorDetail'           => 'Các mục sau đây không được nhập khẩu vì lỗi.',
         'success'               => 'Tệp của bạn đã được nhập',
         'file_delete_success'   => 'Tập tin của bạn đã được xóa thành công',
         'file_delete_error'      => 'Không thể xóa tệp',
         'file_missing' => 'Tệp đã chọn bị thiếu',
-        'file_already_deleted' => 'The file selected was already deleted',
+        'file_already_deleted' => 'Tệp được chọn đã bị xóa',
         'header_row_has_malformed_characters' => 'Một hoặc nhiều thuộc tính trong hàng tiêu đề chứa các ký tự không đúng định dạng UTF-8',
         'content_row_has_malformed_characters' => 'Một hoặc nhiều thuộc tính ở hàng đầu tiên của nội dung chứa ký tự không đúng định dạng UTF-8',
     ],

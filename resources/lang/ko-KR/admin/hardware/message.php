@@ -9,9 +9,9 @@ return [
     'does_not_exist_or_not_requestable' => 'That asset does not exist or is not requestable.',
     'assoc_users'	 	 => '이 자산은 현재 사용자에게 반출 중이어서 삭제 할 수 없습니다. 먼저 자산을 확인해 보고 다시 삭제를 시도해 주세요. ',
     'warning_audit_date_mismatch' 	=> 'This asset\'s next audit date (:next_audit_date) is before the last audit date (:last_audit_date). Please update the next audit date.',
-    'labels_generated'   => 'Labels were successfully generated.',
-    'error_generating_labels' => 'Error while generating labels.',
-    'no_assets_selected' => 'No assets selected.',
+    'labels_generated'   => '레이블이 성공적으로 생성되었습니다..',
+    'error_generating_labels' => '레이블 생성 중 오류가 발생했습니다..',
+    'no_assets_selected' => '선택된 자산이 없습니다.',
 
     'create' => [
         'error'   		=> '자산이 생성되지 않았습니다. 다시 시도해 주세요. :(',
@@ -24,17 +24,17 @@ return [
     'update' => [
         'error'   			=> '자산이 갱신되지 않았습니다. 다시 시도해 주세요.',
         'success' 			=> '자산이 갱신되었습니다.',
-        'encrypted_warning' => 'Asset updated successfully, but encrypted custom fields were not due to permissions',
+        'encrypted_warning' => '자산이 성공적으로 업데이트되었으나, 암호화된 사용자 정의 필드는 권한 문제로 업데이트되지 않았습니다',
         'nothing_updated'	=>  '선택된 항목이 없어서, 갱신 되지 않습니다.',
-        'no_assets_selected'  =>  'No assets were selected, so nothing was updated.',
-        'assets_do_not_exist_or_are_invalid' => 'Selected assets cannot be updated.',
+        'no_assets_selected'  =>  '선택된 자산이 없어 업데이트된 내용이 없습니다.',
+        'assets_do_not_exist_or_are_invalid' => '선택된 자산은 업데이트할 수 없습니다.',
     ],
 
     'restore' => [
         'error'   		=> '자산이 복원되지 않았습니다. 다시 시도해 주세요.',
         'success' 		=> '자산이 복원되었습니다.',
         'bulk_success' 		=> '자산이 복원되었습니다.',
-        'nothing_updated'   => 'No assets were selected, so nothing was restored.', 
+        'nothing_updated'   => '선택된 자산이 없어 복원된 내용이 없습니다.', 
     ],
 
     'audit' => [
@@ -62,10 +62,10 @@ return [
         'success'               => '파일에서 읽어오기가 완료되었습니다',
         'file_delete_success'   => '파일 삭제가 완료되었습니다',
         'file_delete_error'      => '파일을 삭제할 수 없습니다',
-        'file_missing' => 'The file selected is missing',
-        'file_already_deleted' => 'The file selected was already deleted',
-        'header_row_has_malformed_characters' => 'One or more attributes in the header row contain malformed UTF-8 characters',
-        'content_row_has_malformed_characters' => 'One or more attributes in the first row of content contain malformed UTF-8 characters',
+        'file_missing' => '선택된 파일이 없습니다.',
+        'file_already_deleted' => '선택된 파일은 이미 삭제되었습니다.',
+        'header_row_has_malformed_characters' => '헤더 행에 하나 이상의 속성이 잘못된 UTF-8 문자를 포함하고 있습니다.',
+        'content_row_has_malformed_characters' => '콘텐츠의 첫 번째 행에 하나 이상의 속성이 잘못된 UTF-8 문자를 포함하고 있습니다.',
     ],
 
 
@@ -86,8 +86,8 @@ return [
     ],
 
     'multi-checkout' => [
-        'error'   => 'Asset was not checked out, please try again|Assets were not checked out, please try again',
-        'success' => 'Asset checked out successfully.|Assets checked out successfully.',
+        'error'   => '자산이 체크아웃되지 않았습니다. 다시 시도하세요. | 자산이 체크아웃되지 않았습니다. 다시 시도하세요',
+        'success' => '자산이 성공적으로 체크아웃되었습니다. | 자산들이 성공적으로 체크아웃되었습니다.',
     ],
 
     'checkin' => [

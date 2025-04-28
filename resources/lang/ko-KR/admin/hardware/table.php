@@ -25,8 +25,8 @@ return [
     'image'		    => '장비 사진',
     'days_without_acceptance' => '미 승인 기간',
     'monthly_depreciation' => '월간 감가상각',
-    'requesting_user' => 'Requesting User',
-    'requested_date' => 'Requested Date',
+    'requesting_user' => '요청한 사용자',
+    'requested_date' => '요청 날짜',
     'changed'       => '변경됨',
     'icon' => '아이콘',
 ];

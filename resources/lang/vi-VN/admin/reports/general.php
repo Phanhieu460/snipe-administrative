@@ -2,21 +2,21 @@
 
 return [
     'info'   => 'Chọn các tùy chọn bạn muốn cho báo cáo tài sản.',
-    'deleted_user' => 'Deleted user',
-    'send_reminder' => 'Send reminder',
-    'reminder_sent' => 'Reminder sent',
-    'acceptance_deleted' => 'Acceptance request deleted',
-    'acceptance_request' => 'Acceptance request',
+    'deleted_user' => 'Người dùng đã bị xóa',
+    'send_reminder' => 'Gửi lời nhắc',
+    'reminder_sent' => 'Lời nhắc đã được gửi',
+    'acceptance_deleted' => 'Yêu cầu chấp nhận đã bị xóa',
+    'acceptance_request' => 'Yêu cầu chấp nhận',
     'custom_export' => [
-        'user_address' => 'User Address',
-        'user_city' => 'User City',
-        'user_state' => 'User State',
-        'user_country' => 'User Country',
-        'user_zip' => 'User Zip'
+        'user_address' => 'Địa chỉ người dùng',
+        'user_city' => 'Thành phố của người dùng',
+        'user_state' => 'Tỉnh/Thành phố của người dùng',
+        'user_country' => 'Quốc gia của người dùng',
+        'user_zip' => 'Mã bưu điện của người dùng'
     ],
-    'open_saved_template' => 'Open Saved Template',
-    'save_template' =>  'Save Template',
-    'select_a_template' => 'Select a Template',
-    'template_name' => 'Template Name',
-    'update_template' => 'Update Template',
+    'open_saved_template' => 'Mở mẫu đã lưu',
+    'save_template' =>  'lưu mẫu',
+    'select_a_template' => 'chọn mẫu',
+    'template_name' => 'tên mẫu',
+    'update_template' => 'cập nhật mẫu',
 ];

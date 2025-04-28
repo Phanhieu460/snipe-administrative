@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'bulk_delete'		=> 'Xác nhận Hàng loạt Xóa Tài sản',
+    'bulk_delete'		=> 'Xác nhận Xóa hàng loạt  Tài sản',
     'bulk_restore'      => 'Xác nhận khôi phục hàng loạt tài sản', 
   'bulk_delete_help'	=> 'Xem lại tài sản để xóa hàng loạt dưới đây. Sau khi đã xóa, những nội dung này có thể được khôi phục, nhưng chúng sẽ không còn được kết hợp với bất kỳ người dùng nào hiện đang được chỉ định.',
   'bulk_restore_help'	=> 'Hãy xem lại các tài sản cần khôi phục hàng loạt bên dưới. Sau khi được khôi phục, những tài sản này sẽ không được liên kết với bất kỳ người dùng nào mà chúng đã được chỉ định trước đó.',
@@ -41,7 +41,7 @@ return [
     'requestable'		=> 'Những người dùng có thể yêu cầu tài sản này',
     'redirect_to_all'   => 'Return to all :type',
     'redirect_to_type'   => 'Go to :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
+    'redirect_to_checked_out_to'   => 'chuyển hướng đến nơi đã được cấp phát',
     'select_statustype'	=> 'Lựa chọn loại tình trạng',
     'serial'			=> 'Số Sê-ri',
     'status'			=> 'Tình trạng',
@@ -51,14 +51,14 @@ return [
         'warranty_expires'		=> 'Hết hạn bảo hành',
     'years'				=> 'năm',
     'asset_location' => 'Cập nhật vị trí tài sản',
-    'asset_location_update_default_current' => 'Cập nhật vị trí tài sản mặc định VÀ vị trí thực tế',
+    'asset_location_update_default_current' => 'Cập nhật vị trí tài sản mặc định và vị trí thực tế',
     'asset_location_update_default' => 'Chỉ cập nhật vị trí tài sản mặc định',
     'asset_location_update_actual' => 'Chỉ cập nhật vị trí thực tế',
     'asset_not_deployable' => 'Trạng thái tài sản là không cho phép cấp phát. Tài sản này không thể bàn giao.',
-    'asset_not_deployable_checkin' => 'That asset status is not deployable. Using this status label will checkin the asset.',
+    'asset_not_deployable_checkin' => 'Trạng thái của thiết bị đó không thể triển khai được. Sử dụng nhãn trạng thái này sẽ thu hồi (check-in) thiết bị.',
     'asset_deployable' => 'Trạng thái tài sản là được phép cấp phát. Tài sản này có thể bàn giao.',
     'processing_spinner' => 'Đang xử lý... (Quá trình này có thể mất một chút thời gian đối với các tệp lớn)',
     'optional_infos'  => 'Thông tin bổ sung',
     'order_details'   => 'Thông tin đơn hàng',
-    'calc_eol'    => 'If nulling the EOL date, use automatic EOL calculation based on the purchase date and EOL rate.',
+    'calc_eol'    => 'Nếu xóa ngày hết hạn sử dụng (EOL), hệ thống sẽ tự động tính toán ngày hết hạn dựa trên ngày mua và tỷ lệ EOL.',
 ];
