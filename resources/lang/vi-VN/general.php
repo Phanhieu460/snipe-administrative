@@ -601,15 +601,8 @@ return [
     'deleted_models' => 'Deleted Asset Models',
     'deleted_users' => 'Deleted Users',
     'site_name' => 'Quản Lý Tài Sản Hành Chính',
-    '_snipeit_quy_cach_5' => 'Quy cách', //key lấy theo trường db_column thuộc bảng custom_fields
-    '_snipeit_don_vi_6' => 'Đơn vị',
-    '_snipeit_noi_su_dung_7' => 'Nơi sử dụng',
-    '_snipeit_ngay_di_chuyen_8' => 'Ngày di chuyển',
-    '_snipeit_ngay_sua_chua_9' => 'Ngày sửa chữa',
-    '_snipeit_ngay_tieu_huy_10' =>'Ngày tiêu hủy',
-    '_snipeit_bo_phan_4' => 'Bộ phận',
     'specification'=>'Quy cách',
-    'select_specification'=>'chọn 1 quy cách'
+    'select_specification'=>'Lựa chọn quy cách',
     'unit' => "Đơn vị",
     'location_of_use' => 'Nơi sử dụng',
     'date_of_movement'  => 'Ngày di chuyển',

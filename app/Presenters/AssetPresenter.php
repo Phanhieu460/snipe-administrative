@@ -22,14 +22,16 @@ class AssetPresenter extends Presenter
                 'field' => 'checkbox',
                 'checkbox' => true,
                 'titleTooltip' => trans('general.select_all_none'),
-            ], [
+            ],
+            [
                 'field' => 'id',
                 'searchable' => false,
                 'sortable' => true,
                 'switchable' => true,
                 'title' => trans('general.id'),
                 'visible' => false,
-            ], [
+            ],
+            [
                 'field' => 'company',
                 'searchable' => true,
                 'sortable' => true,
@@ -37,14 +39,16 @@ class AssetPresenter extends Presenter
                 'title' => trans('general.company'),
                 'visible' => false,
                 'formatter' => 'companiesLinkObjFormatter',
-            ], [
+            ],
+            [
                 'field' => 'name',
                 'searchable' => true,
                 'sortable' => false,
                 'title' => trans('admin/hardware/form.name'),
                 'visible' => false,
                 'formatter' => 'hardwareLinkFormatter',
-            ], [
+            ],
+            [
                 'field' => 'asset_tag',
                 'searchable' => true,
                 'sortable' => true,
@@ -52,7 +56,8 @@ class AssetPresenter extends Presenter
                 'title' => trans('admin/hardware/table.asset_tag'),
                 'visible' => true,
                 'formatter' => 'hardwareLinkFormatter',
-            ],[
+            ],
+            [
                 'field' => 'image',
                 'searchable' => false,
                 'sortable' => true,
@@ -60,117 +65,134 @@ class AssetPresenter extends Presenter
                 'title' => trans('admin/hardware/table.image'),
                 'visible' => true,
                 'formatter' => 'imageFormatter',
-            ],  [
+            ],
+            [
                 'field' => 'serial',
                 'searchable' => true,
                 'sortable' => false,
                 'title' => trans('admin/hardware/form.serial'),
                 'visible' => false,
                 'formatter' => 'hardwareLinkFormatter',
-            ],  [
+            ],
+            [
                 'field' => 'model',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('admin/hardware/form.model'),
                 'visible' => true,
                 'formatter' => 'modelsLinkObjFormatter',
-            ], [
+            ],
+            [
                 'field' => 'model_number',
                 'searchable' => true,
                 'sortable' => false,
                 'title' => trans('admin/models/table.modelnumber'),
                 'visible' => false,
-            ], [
+            ],
+            [
                 'field' => 'category',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('general.category'),
                 'visible' => true,
                 'formatter' => 'categoriesLinkObjFormatter',
-            ], [
+            ],
+            [
                 'field' => 'status_label',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('admin/hardware/table.status'),
                 'visible' => true,
                 'formatter' => 'statuslabelsLinkObjFormatter',
-            ], [
+            ],
+            [
                 'field' => 'assigned_to',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('admin/hardware/form.checkedout_to'),
                 'visible' => true,
                 'formatter' => 'polymorphicItemFormatter',
-            ], [
+            ],
+            [
                 'field' => 'employee_number',
                 'searchable' => false,
                 'sortable' => false,
                 'title' => trans('general.employee_number'),
                 'visible' => false,
                 'formatter' => 'employeeNumFormatter',
-            ], [
+            ],
+            [
                 'field' => 'location',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('admin/hardware/table.location'),
                 'visible' => true,
                 'formatter' => 'deployedLocationFormatter',
-            ], [
+            ],
+            [
                 'field' => 'rtd_location',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('admin/hardware/form.default_location'),
                 'visible' => false,
                 'formatter' => 'deployedLocationFormatter',
-            ], [
+            ],
+            [
                 'field' => 'manufacturer',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('general.manufacturer'),
                 'visible' => false,
                 'formatter' => 'manufacturersLinkObjFormatter',
-            ], [
+            ],
+            [
                 'field' => 'supplier',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('general.supplier'),
                 'visible' => false,
                 'formatter' => 'suppliersLinkObjFormatter',
-            ], [
+            ],
+            [
                 'field' => 'purchase_date',
                 'searchable' => true,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.purchase_date'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'age',
                 'searchable' => false,
                 'sortable' => false,
                 'visible' => false,
                 'title' => trans('general.age'),
-            ], [
+            ],
+            [
                 'field' => 'purchase_cost',
                 'searchable' => true,
                 'sortable' => true,
                 'title' => trans('general.purchase_cost'),
                 'footerFormatter' => 'sumFormatter',
                 'class' => 'text-right',
-            ], [
+            ],
+            [
                 "field" => "book_value",
                 "searchable" => false,
                 "sortable" => false,
                 "title" => trans('admin/hardware/table.book_value'),
                 "footerFormatter" => 'sumFormatter',
                 "class" => "text-right",
-            ],[
+            ],
+            [
                 'field' => 'order_number',
                 'searchable' => true,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.order_number'),
                 'formatter' => 'orderNumberObjFilterFormatter',
-            ], [
+            ],
+            [
                 'field' => 'eol',
                 'searchable' => false,
                 'sortable' => true,
@@ -184,20 +206,23 @@ class AssetPresenter extends Presenter
                 'visible' => false,
                 'title' => trans('admin/hardware/form.eol_date'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'warranty_months',
                 'searchable' => true,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('admin/hardware/form.warranty'),
-            ], [
+            ],
+            [
                 'field' => 'warranty_expires',
                 'searchable' => false,
                 'sortable' => false,
                 'visible' => false,
                 'title' => trans('admin/hardware/form.warranty_expires'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'requestable',
                 'searchable' => false,
                 'sortable' => true,
@@ -205,35 +230,40 @@ class AssetPresenter extends Presenter
                 'title' => trans('admin/hardware/general.requestable'),
                 'formatter' => 'trueFalseFormatter',
 
-            ], [
+            ],
+            [
                 'field' => 'notes',
                 'searchable' => true,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.notes'),
 
-            ], [
+            ],
+            [
                 'field' => 'checkout_counter',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.checkouts_count'),
 
-            ], [
+            ],
+            [
                 'field' => 'checkin_counter',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.checkins_count'),
 
-            ], [
+            ],
+            [
                 'field' => 'requests_counter',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.user_requests_count'),
 
-            ], [
+            ],
+            [
                 'field' => 'created_by',
                 'searchable' => false,
                 'sortable' => true,
@@ -249,7 +279,8 @@ class AssetPresenter extends Presenter
                 'title' => trans('general.created_at'),
                 'visible' => false,
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'updated_at',
                 'searchable' => true,
                 'sortable' => true,
@@ -257,42 +288,48 @@ class AssetPresenter extends Presenter
                 'title' => trans('general.updated_at'),
                 'visible' => false,
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'last_checkout',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('admin/hardware/table.checkout_date'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'last_checkin',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('admin/hardware/table.last_checkin_date'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'expected_checkin',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('admin/hardware/form.expected_checkin'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'last_audit_date',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.last_audit'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'next_audit_date',
                 'searchable' => false,
                 'sortable' => true,
                 'visible' => false,
                 'title' => trans('general.next_audit_date'),
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ],
+            [
                 'field' => 'byod',
                 'searchable' => false,
                 'sortable' => true,
@@ -307,55 +344,55 @@ class AssetPresenter extends Presenter
                 'sortable' => true,
                 'switchable' => true,
                 'visible' => true,
-              ],
-              [
+            ],
+            [
                 'field' => 'specification_name',
                 'title' => trans('general.specification'),
                 'sortable' => true,
                 'switchable' => true,
                 'visible' => true,
-              ],
-              [
+            ],
+            [
                 'field' => 'unit',
                 'title' => trans('general.unit'),
                 'sortable' => true,
                 'switchable' => true,
                 'visible' => true,
-              ],
+            ],
             [
                 'field' => 'location_of_use',
                 'title' => trans('general.location_of_use'),
                 'sortable' => true,
                 'switchable' => true,
                 'visible' => true,
-              ],
+            ],
             [
                 'field' => 'date_of_movement',
                 'title' => trans('general.date_of_movement'),
                 'sortable' => true,
-                'switchable' => true,
+                'searchable' => true,
                 'visible' => true,
                 'formatter' => 'dateDisplayFormatter',
 
-              ],
+            ],
             [
                 'field' => 'date_of_repair',
                 'title' => trans('general.date_of_repair'),
                 'sortable' => true,
-                'switchable' => true,
+                'searchable' => true,
                 'visible' => true,
                 'formatter' => 'dateDisplayFormatter',
 
-              ],
+            ],
             [
                 'field' => 'date_of_disposal',
                 'title' => trans('general.date_of_disposal'),
                 'sortable' => true,
-                'switchable' => true,
+                'searchable' => true,
                 'visible' => true,
                 'formatter' => 'dateDisplayFormatter',
 
-              ],
+            ],
         ];
 
         // This looks complicated, but we have to confirm that the custom fields exist in custom fieldsets
@@ -379,7 +416,7 @@ class AssetPresenter extends Presenter
                 'sortable' => true,
                 'switchable' => true,
                 'title' => $field->name,
-                'formatter'=> 'customFieldsFormatter',
+                'formatter' => 'customFieldsFormatter',
                 'escape' => true,
                 'class' => ($field->field_encrypted == '1') ? 'css-padlock' : '',
                 'visible' => ($field->show_in_listview == '1') ? true : false,
@@ -391,7 +428,7 @@ class AssetPresenter extends Presenter
             'searchable' => false,
             'sortable' => false,
             'switchable' => false,
-            'title' => trans('general.checkin').'/'.trans('general.checkout'),
+            'title' => trans('general.checkin') . '/' . trans('general.checkout'),
             'visible' => true,
             'formatter' => 'hardwareInOutFormatter',
         ];
@@ -509,7 +546,7 @@ class AssetPresenter extends Presenter
         }
         $url = config('app.url');
         if (! empty($imagePath)) {
-            $imagePath = '<img src="'.$url.'/uploads/assets/'.$imagePath.' height="50" width="50" alt="'.$imageAlt.'">';
+            $imagePath = '<img src="' . $url . '/uploads/assets/' . $imagePath . ' height="50" width="50" alt="' . $imageAlt . '">';
         }
 
         return $imagePath;
@@ -528,7 +565,7 @@ class AssetPresenter extends Presenter
             $imagePath = $this->model->image;
         }
         if (! empty($imagePath)) {
-            return config('app.url').'/uploads/assets/'.$imagePath;
+            return config('app.url') . '/uploads/assets/' . $imagePath;
         }
 
         return $imagePath;
@@ -561,12 +598,12 @@ class AssetPresenter extends Presenter
 
         // Asset tag
         if ($this->asset_tag) {
-            $str .= ' ('.$this->model->asset_tag.')';
+            $str .= ' (' . $this->model->asset_tag . ')';
         }
 
         // Asset Model name
         if ($this->model->model) {
-            $str .= ' - '.$this->model->model->name;
+            $str .= ' - ' . $this->model->model->name;
         }
 
         return $str;
@@ -654,7 +691,7 @@ class AssetPresenter extends Presenter
 
                 // If it's assigned and not set to the default "ready to deploy" status
                 if ($this->assetstatus->name != trans('general.ready_to_deploy')) {
-                    return trans('general.deployed').' ('.$this->model->assetstatus->name.')';
+                    return trans('general.deployed') . ' (' . $this->model->assetstatus->name . ')';
                 }
 
                 // If it's assigned to the default "ready to deploy" status, just
@@ -680,7 +717,7 @@ class AssetPresenter extends Presenter
     {
         if (($this->purchase_date) && ($this->warranty_months)) {
             $date = date_create($this->purchase_date);
-            date_add($date, date_interval_create_from_date_string($this->warranty_months.' months'));
+            date_add($date, date_interval_create_from_date_string($this->warranty_months . ' months'));
 
             return date_format($date, 'Y-m-d');
         }
@@ -694,7 +731,7 @@ class AssetPresenter extends Presenter
      */
     public function dynamicUrl($dynamic_url)
     {
-        $url = (str_replace('{LOCALE}',\App\Models\Setting::getSettings()->locale, $dynamic_url));
+        $url = (str_replace('{LOCALE}', \App\Models\Setting::getSettings()->locale, $dynamic_url));
         $url = (str_replace('{SERIAL}', urlencode($this->model->serial), $url));
         $url = (str_replace('{MODEL_NAME}', urlencode($this->model->model->name), $url));
         $url = (str_replace('{MODEL_NUMBER}', urlencode($this->model->model->model_number), $url));
