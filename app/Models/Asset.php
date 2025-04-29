@@ -94,6 +94,9 @@ class Asset extends Depreciable
         'created_at'     => 'datetime',
         'updated_at'   => 'datetime',
         'deleted_at'  => 'datetime',
+        'date_of_movement' => 'date',
+        'date_of_repair' => 'date',
+        'date_of_disposal' => 'date'
     ];
 
     protected $rules = [
@@ -125,7 +128,11 @@ class Asset extends Depreciable
         'requestable'       => ['nullable', 'boolean'],
         'assigned_user'     => ['nullable', 'exists:users,id,deleted_at,NULL'],
         'assigned_location' => ['nullable', 'exists:locations,id,deleted_at,NULL'],
-        'assigned_asset'    => ['nullable', 'exists:assets,id,deleted_at,NULL']
+        'assigned_asset'    => ['nullable', 'exists:assets,id,deleted_at,NULL'],
+        'date_of_movement'  => ['nullable', 'date', 'date_format:Y-m-d'],
+        'date_of_repair'    => ['nullable', 'date', 'date_format:Y-m-d'],
+        'date_of_disposal'  => ['nullable', 'date', 'date_format:Y-m-d'],
+
     ];
 
 
@@ -165,6 +172,11 @@ class Asset extends Depreciable
         'last_checkout',
         'department_id',
         'specification_id'
+        'unit',
+        'location_of_use',
+        'date_of_movement',
+        'date_of_repair',
+        'date_of_disposal',
     ];
 
     use Searchable;
@@ -190,6 +202,7 @@ class Asset extends Depreciable
       'last_checkin',
       'last_checkout',
       'asset_eol_date',
+      
     ];
 
     /**

@@ -602,5 +602,9 @@ return [
     'cost_each' => ':amount each',
     'select_specification'=>'select one specification',
     'specification'=>'specification',
-
+    'unit' => 'Unit',
+    'location_of_use' => 'Location of use',
+    'date_of_movement'  => 'Date of movement',
+    'date_of_repair'    => 'Date of repair',
+    'date_of_disposal'  => 'Date of disposal',
 ];

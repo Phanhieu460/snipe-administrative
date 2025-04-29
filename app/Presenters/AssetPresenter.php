@@ -315,6 +315,47 @@ class AssetPresenter extends Presenter
                 'switchable' => true,
                 'visible' => true,
               ],
+              [
+                'field' => 'unit',
+                'title' => trans('general.unit'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+              ],
+            [
+                'field' => 'location_of_use',
+                'title' => trans('general.location_of_use'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+              ],
+            [
+                'field' => 'date_of_movement',
+                'title' => trans('general.date_of_movement'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+                'formatter' => 'dateDisplayFormatter',
+
+              ],
+            [
+                'field' => 'date_of_repair',
+                'title' => trans('general.date_of_repair'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+                'formatter' => 'dateDisplayFormatter',
+
+              ],
+            [
+                'field' => 'date_of_disposal',
+                'title' => trans('general.date_of_disposal'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+                'formatter' => 'dateDisplayFormatter',
+
+              ],
         ];
 
         // This looks complicated, but we have to confirm that the custom fields exist in custom fieldsets
@@ -332,18 +373,12 @@ class AssetPresenter extends Presenter
         // they are presented in the blade view. If we escape them here, custom fields with quotes in their
         // name can break the listings page. - snipe
         foreach ($fields as $field) {
-            // echo "<script>console.log('" . json_encode($field->db_column) . "');</script>";
-            // $jsonField = json_encode($layout);
-            //             // $logValue = 'custom_fields.' . $field->name. $field->db_column;
-            //             echo "<script>
-            //                 console.log($jsonField); // Hiển thị thông tin trong console
-            //             </script>";
             $layout[] = [
-                'field' => 'custom_fields.' . $field->name,
+                'field' => 'custom_fields.' . $field->db_column,
                 'searchable' => true,
                 'sortable' => true,
                 'switchable' => true,
-                'title' => trans('general.' . $field->db_column),
+                'title' => $field->name,
                 'formatter'=> 'customFieldsFormatter',
                 'escape' => true,
                 'class' => ($field->field_encrypted == '1') ? 'css-padlock' : '',

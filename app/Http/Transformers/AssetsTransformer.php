@@ -70,6 +70,11 @@ class AssetsTransformer
             ] : null,
             'department_name' => optional($asset->department)->name,
             'specification_name'=> optional($asset->specification)->name,
+            'unit' => e($asset->unit),
+            'location_of_use' => e($asset->location_of_use),
+            'date_of_movement' => Helper::getFormattedDateObject($asset->date_of_movement, 'date'),
+            'date_of_repair' => Helper::getFormattedDateObject($asset->date_of_repair, 'date'),
+            'date_of_disposal' => Helper::getFormattedDateObject($asset->date_of_disposal, 'date'),
             'location' => ($asset->location) ? [
                 'id' => (int) $asset->location->id,
                 'name'=> e($asset->location->name),

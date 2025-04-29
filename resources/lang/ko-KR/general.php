@@ -610,4 +610,9 @@ return [
     'specification'=>'사양',
     'select_specification'=>'사양 선택'
 
+    'unit' => '단위',
+    'location_of_use' => '사용 장소',
+    'date_of_movement'  => '이동일',
+    'date_of_repair'    => '수리일',
+    'date_of_disposal'  => '폐기일',
 ];

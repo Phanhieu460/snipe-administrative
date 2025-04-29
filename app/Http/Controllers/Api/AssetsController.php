@@ -113,6 +113,9 @@ class AssetsController extends Controller
             'byod',
             'asset_eol_date',
             'requestable',
+            'date_of_movement',
+            'date_of_repair',
+            'date_of_disposal'
         ];
 
         $filter = [];

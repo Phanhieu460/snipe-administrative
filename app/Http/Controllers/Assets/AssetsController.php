@@ -121,6 +121,8 @@ class AssetsController extends Controller
             $asset = new Asset();
             $asset->model()->associate(AssetModel::find($request->input('model_id')));
             $asset->name = $request->input('name');
+            $asset->unit = $request->input('unit');
+            $asset->location_of_use = $request->input('location_of_use');
 
             // Check for a corresponding serial
             if (($serials) && (array_key_exists($a, $serials))) {
@@ -142,6 +144,9 @@ class AssetsController extends Controller
             $asset->warranty_months         = request('warranty_months', null);
             $asset->purchase_cost           = request('purchase_cost');
             $asset->purchase_date           = request('purchase_date', null);
+            $asset->date_of_movement           = request('date_of_movement', null);
+            $asset->date_of_repair           = request('date_of_repair', null);
+            $asset->date_of_disposal           = request('date_of_disposal', null);
             $asset->asset_eol_date          = request('asset_eol_date', null);
             $asset->assigned_to             = request('assigned_to', null);
             $asset->supplier_id             = request('supplier_id', null);
@@ -316,6 +321,10 @@ class AssetsController extends Controller
         $asset->specification_id        = $request->input('specification_id');
         $asset->purchase_date = $request->input('purchase_date', null);
         $asset->next_audit_date = $request->input('next_audit_date', null);
+        $asset->department_id           = $request->input('department_id');
+        $asset->date_of_movement = $request->input('date_of_movement', null);
+        $asset->date_of_repair = $request->input('date_of_repair', null);
+        $asset->date_of_disposal = $request->input('date_of_disposal', null);
         if ($request->filled('purchase_date') && !$request->filled('asset_eol_date') && ($asset->model->eol > 0)) {
             $asset->purchase_date = $request->input('purchase_date', null); 
             $asset->asset_eol_date = Carbon::parse($request->input('purchase_date'))->addMonths($asset->model->eol)->format('Y-m-d');
@@ -378,6 +387,8 @@ class AssetsController extends Controller
         }
 
         $asset->name = $request->input('name');
+        $asset->unit = $request->input('unit');
+        $asset->location_of_use = $request->input('location_of_use');
         $asset->company_id = Company::getIdForCurrentUser($request->input('company_id'));
         $asset->model_id = $request->input('model_id');
         $asset->order_number = $request->input('order_number');

@@ -61,4 +61,9 @@ return [
     'optional_infos'  => 'Optional Information',
     'order_details'   => 'Order Related Information',
     'calc_eol'    => 'If nulling the EOL date, use automatic EOL calculation based on the purchase date and EOL rate.',
+    'unit' => 'Unit',
+    'location_of_use' => 'Location of use',
+    'date_of_movement'  => 'Date of movement',
+    'date_of_repair'    => 'Date of repair',
+    'date_of_disposal'  => 'Date of disposal',
 ];

@@ -61,4 +61,9 @@ return [
     'optional_infos'  => 'Thông tin bổ sung',
     'order_details'   => 'Thông tin đơn hàng',
     'calc_eol'    => 'Nếu xóa ngày hết hạn sử dụng (EOL), hệ thống sẽ tự động tính toán ngày hết hạn dựa trên ngày mua và tỷ lệ EOL.',
+    'unit' => 'Đơn vị',
+    'location_of_use' => 'Nơi sử dụng',
+    'date_of_movement'  => 'Ngày di chuyển',
+    'date_of_repair'    => 'Ngày sửa chữa',
+    'date_of_disposal'  => 'Ngày tiêu hủy',
 ];

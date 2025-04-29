@@ -268,7 +268,8 @@ return [
     'search'				=> 'Tìm kiếm',
     'select_category'       => 'Chọn một danh mục',
     'select_datasource' => 'Select a data source',
-    'select_department'     => 'Chọn một Phòng',
+    'select_department'     => 'Lựa chọn bộ phận',
+    'select_unit'   => 'Nhập đơn vị',
     'select_depreciation'	=> 'Lựa chọn một Loại Khấu hao',
     'select_location'		=> 'Lựa chọn một Địa phương',
     'select_manufacturer'	=> 'Lựa chọn một nhà sản xuất',
@@ -609,5 +610,10 @@ return [
     '_snipeit_bo_phan_4' => 'Bộ phận',
     'specification'=>'Quy cách',
     'select_specification'=>'chọn 1 quy cách'
+    'unit' => "Đơn vị",
+    'location_of_use' => 'Nơi sử dụng',
+    'date_of_movement'  => 'Ngày di chuyển',
+    'date_of_repair'    => 'Ngày sửa chữa',
+    'date_of_disposal'  => 'Ngày tiêu hủy',
 
 ];

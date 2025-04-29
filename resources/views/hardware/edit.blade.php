@@ -53,16 +53,7 @@
 
     <div class="input_fields_wrap">
     </div>
-    @include('partials.forms.edit.department-select', [
-        'fieldname' => 'department_id',
-        'translated_name' => trans('general.department'),
-        
-    ])
-    @include('partials.forms.edit.specification-select', [
-        'fieldname' => 'specification_id',
-        'translated_name' => trans('general.specification'),
-       
-    ])
+    
     @include ('partials.forms.edit.model-select', ['translated_name' => trans('admin/hardware/form.model'), 'fieldname' => 'model_id', 'field_req' => true])
 
 
@@ -85,7 +76,21 @@
 
     @include ('partials.forms.edit.image-upload', ['image_path' => app('assets_upload_path')])
 
-
+    @include('partials.forms.edit.department-select', [
+        'fieldname' => 'department_id',
+        'translated_name' => trans('general.department'),
+        
+    ])
+    @include('partials.forms.edit.specification-select', [
+        'fieldname' => 'specification_id',
+        'translated_name' => trans('general.specification'),
+       
+    ])
+    @include ('partials.forms.edit.unit', ['translated_unit' => trans('admin/hardware/form.unit')])
+    @include ('partials.forms.edit.location-of-use', ['translated_location_of_use' => trans('admin/hardware/form.location_of_use')])
+    @include ('partials.forms.edit.date-of-movement')
+    @include ('partials.forms.edit.date-of-repair')
+    @include ('partials.forms.edit.date-of-disposal')
     <div id='custom_fields_content'>
         <!-- Custom Fields -->
         @if ($item->model && $item->model->fieldset)

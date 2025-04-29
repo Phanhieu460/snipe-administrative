@@ -61,4 +61,9 @@ return [
     'optional_infos'  => '선택 정보',
     'order_details'   => '주문 관련 정보',
     'calc_eol'    => 'EOL 날짜를 null로 설정하는 경우, 구매 날짜와 EOL 비율을 기준으로 자동 EOL 계산을 사용하세요.',
+    'unit' => '단위',
+    'location_of_use' => '사용 장소',
+    'date_of_movement'  => '이동일',
+    'date_of_repair'    => '수리일',
+    'date_of_disposal'  => '폐기일',
 ];
