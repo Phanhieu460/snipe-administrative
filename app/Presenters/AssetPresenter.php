@@ -301,6 +301,13 @@ class AssetPresenter extends Presenter
                 'formatter' => 'trueFalseFormatter',
 
             ],
+            [
+                'field' => 'department_name',
+                'title' => trans('general.department'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+              ],
         ];
 
         // This looks complicated, but we have to confirm that the custom fields exist in custom fieldsets
@@ -325,11 +332,11 @@ class AssetPresenter extends Presenter
             //                 console.log($jsonField); // Hiển thị thông tin trong console
             //             </script>";
             $layout[] = [
-                'field' => 'custom_fields.' . $field->db_column,
+                'field' => 'custom_fields.' . $field->name,
                 'searchable' => true,
                 'sortable' => true,
                 'switchable' => true,
-                'title' =>  trans('general.' . $field->db_column),
+                'title' => trans('general.' . $field->db_column),
                 'formatter'=> 'customFieldsFormatter',
                 'escape' => true,
                 'class' => ($field->field_encrypted == '1') ? 'css-padlock' : '',

@@ -39,6 +39,7 @@ class UpdateAssetRequest extends ImageUploadRequest
                     'min:1', 'max:255', 'not_array',
                     Rule::unique('assets', 'asset_tag')->ignore($this->asset)->withoutTrashed()
                 ],
+                'department_id' => 'required', 'integer', 'exists:departments,id',
             ],
         );
 

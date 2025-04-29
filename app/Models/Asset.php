@@ -100,6 +100,7 @@ class Asset extends Depreciable
         'model_id'          => ['required', 'integer', 'exists:models,id,deleted_at,NULL', 'not_array'],
         'status_id'         => ['required', 'integer', 'exists:status_labels,id'],
         'asset_tag'         => ['required', 'min:1', 'max:255', 'unique_undeleted:assets,asset_tag', 'not_array'],
+        'department_id'     => ['required','integer', 'exists:departments,id'],
         'name'              => ['nullable', 'max:255'],
         'company_id'        => ['nullable', 'integer', 'exists:companies,id'],
         'warranty_months'   => ['nullable', 'numeric', 'digits_between:0,240'],
@@ -161,6 +162,7 @@ class Asset extends Depreciable
         'asset_eol_date',
         'last_checkin',
         'last_checkout',
+        'department_id',
     ];
 
     use Searchable;
@@ -212,7 +214,10 @@ class Asset extends Depreciable
         }
         $this->attributes['expected_checkin'] = $value;
     }
-
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
     /**
      * This handles the custom field validation for assets
      *

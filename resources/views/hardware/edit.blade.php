@@ -53,7 +53,11 @@
 
     <div class="input_fields_wrap">
     </div>
-
+    @include('partials.forms.edit.department-select', [
+        'fieldname' => 'department_id',
+        'translated_name' => trans('general.department'),
+        
+    ])
     @include ('partials.forms.edit.model-select', ['translated_name' => trans('admin/hardware/form.model'), 'fieldname' => 'model_id', 'field_req' => true])
 
 

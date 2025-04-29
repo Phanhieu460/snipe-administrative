@@ -134,6 +134,7 @@ class AssetsController extends Controller
             $asset->company_id              = Company::getIdForCurrentUser($request->input('company_id'));
             $asset->model_id                = $request->input('model_id');
             $asset->order_number            = $request->input('order_number');
+            $asset->department_id           = $request->input('department_id');
             $asset->notes                   = $request->input('notes');
             $asset->created_by              = auth()->id();
             $asset->status_id               = request('status_id');
