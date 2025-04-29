@@ -308,6 +308,13 @@ class AssetPresenter extends Presenter
                 'switchable' => true,
                 'visible' => true,
               ],
+              [
+                'field' => 'specification_name',
+                'title' => trans('general.specification'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+              ],
         ];
 
         // This looks complicated, but we have to confirm that the custom fields exist in custom fieldsets

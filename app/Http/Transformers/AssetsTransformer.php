@@ -69,6 +69,7 @@ class AssetsTransformer
                 'name'=> e($asset->company->name),
             ] : null,
             'department_name' => optional($asset->department)->name,
+            'specification_name'=> optional($asset->specification)->name,
             'location' => ($asset->location) ? [
                 'id' => (int) $asset->location->id,
                 'name'=> e($asset->location->name),

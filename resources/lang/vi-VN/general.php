@@ -607,5 +607,7 @@ return [
     '_snipeit_ngay_sua_chua_9' => 'Ngày sửa chữa',
     '_snipeit_ngay_tieu_huy_10' =>'Ngày tiêu hủy',
     '_snipeit_bo_phan_4' => 'Bộ phận',
+    'specification'=>'Quy cách',
+    'select_specification'=>'chọn 1 quy cách'
 
 ];

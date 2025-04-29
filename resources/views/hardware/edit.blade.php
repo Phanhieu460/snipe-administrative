@@ -58,6 +58,11 @@
         'translated_name' => trans('general.department'),
         
     ])
+    @include('partials.forms.edit.specification-select', [
+        'fieldname' => 'specification_id',
+        'translated_name' => trans('general.specification'),
+       
+    ])
     @include ('partials.forms.edit.model-select', ['translated_name' => trans('admin/hardware/form.model'), 'fieldname' => 'model_id', 'field_req' => true])
 
 

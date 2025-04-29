@@ -101,6 +101,7 @@ class Asset extends Depreciable
         'status_id'         => ['required', 'integer', 'exists:status_labels,id'],
         'asset_tag'         => ['required', 'min:1', 'max:255', 'unique_undeleted:assets,asset_tag', 'not_array'],
         'department_id'     => ['required','integer', 'exists:departments,id'],
+        'specification_id'  =>['nullable','integer', 'exists:specifications,id'],
         'name'              => ['nullable', 'max:255'],
         'company_id'        => ['nullable', 'integer', 'exists:companies,id'],
         'warranty_months'   => ['nullable', 'numeric', 'digits_between:0,240'],
@@ -163,6 +164,7 @@ class Asset extends Depreciable
         'last_checkin',
         'last_checkout',
         'department_id',
+        'specification_id'
     ];
 
     use Searchable;
@@ -218,6 +220,10 @@ class Asset extends Depreciable
     {
         return $this->belongsTo(Department::class);
     }
+    public function specification()
+{
+    return $this->belongsTo(Specification::class);
+}
     /**
      * This handles the custom field validation for assets
      *

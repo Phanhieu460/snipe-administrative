@@ -606,6 +606,8 @@ return [
     '_snipeit_ngay_di_chuyen_8' => '이동 날짜',
     '_snipeit_ngay_sua_chua_9' => '수리 날짜',
     '_snipeit_ngay_tieu_huy_10' =>'폐기 날짜',
-    '_snipeit_bo_phan_4' => '부서'
+    '_snipeit_bo_phan_4' => '부서',
+    'specification'=>'사양',
+    'select_specification'=>'사양 선택'
 
 ];

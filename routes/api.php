@@ -183,6 +183,17 @@ Route::group(['prefix' => 'v1', 'middleware' => ['api', 'throttle:api']], functi
     ); // end companies API routes
 
 
+    Route::group(['prefix' => 'specifications'], function () {
+        
+        Route::get('selectlist',
+            [
+                Api\SpecificationsController::class, 
+                'selectlist'
+            ]
+        )->name('api.specifications.selectlist');
+
+      }); 
+
     /**
       * Departments API routes
       */
