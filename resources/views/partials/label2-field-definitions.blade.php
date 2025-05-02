@@ -324,6 +324,8 @@
                                 <option value="last_audit_date">{{trans('general.last_audit')}}</option>
                                 <option value="next_audit_date">{{trans('general.next_audit_date')}}</option>
                                 <option value="next_audit_date">{{trans('general.purchase_date')}}</option>
+                                <option value="department.name">{{trans('general.department')}}</option>
+                                <option value="specification.name">{{trans('general.specification')}}</option>
                             </optgroup>
                             <optgroup label="{{trans('general.asset')." ".trans('general.asset_model')}}">
                                 <option value="model.name">{{trans('admin/models/table.name')}}</option>

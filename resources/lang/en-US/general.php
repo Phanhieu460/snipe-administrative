@@ -600,11 +600,14 @@ return [
     'deleted_models' => 'Deleted Asset Models',
     'deleted_users' => 'Deleted Users',
     'cost_each' => ':amount each',
-    'select_specification'=>'select one specification',
-    'specification'=>'specification',
+    'site_name'=> 'Administrative Asset Management',
+    'select_specification'=>'Select specification',
+    'specification'=>'Specification',
     'unit' => 'Unit',
     'location_of_use' => 'Location of use',
     'date_of_movement'  => 'Date of movement',
     'date_of_repair'    => 'Date of repair',
     'date_of_disposal'  => 'Date of disposal',
+    'unit_placeholder'    => 'Enter unit',
+    'location_of_use_placeholder' => 'Enter location of use'
 ];

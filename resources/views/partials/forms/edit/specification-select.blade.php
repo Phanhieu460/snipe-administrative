@@ -2,7 +2,7 @@
 
     <label for="{{ $fieldname }}" class="col-md-3 control-label">{{ $translated_name }}</label>
 
-    <div class="col-md-6">
+    <div class="col-md-7">
         <select 
             class="js-data-ajax" 
             data-endpoint="specifications" 

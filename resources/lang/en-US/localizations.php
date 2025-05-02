@@ -33,7 +33,7 @@ return [
         // 'it-IT'=> 'Italian',
         // 'ja-JP'=> 'Japanese',
         // 'km-KH'=>'Khmer',
-        // 'ko-KR'=> 'Korean',
+        'ko-KR'=> 'Korean',
         // 'lt-LT'=>'Lithuanian',
         // 'lv-LV'=> 'Latvian',
         // 'mk-MK'=> 'Macedonian',

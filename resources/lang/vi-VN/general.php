@@ -608,5 +608,7 @@ return [
     'date_of_movement'  => 'Ngày di chuyển',
     'date_of_repair'    => 'Ngày sửa chữa',
     'date_of_disposal'  => 'Ngày tiêu hủy',
+    'unit_placeholder'    => 'Nhập đơn vị',
+    'location_of_use_placeholder' => 'Nhập nơi sử dụng'
 
 ];

@@ -607,4 +607,6 @@ return [
     'date_of_disposal'  => '폐기일',
     'specification'=>'규격',
     'select_specification'=>'규격 선택',
+    'unit_placeholder'    => '단위 입력',
+    'location_of_use_placeholder' => '사용 장소 입력',
 ];
