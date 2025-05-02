@@ -4,7 +4,7 @@ return [
 
     'select_language' => 'Select a Language',
     'languages' => [
-        // 'en-US'=> 'English, US',
+        'en-US'=> 'English, US',
         // 'en-GB'=> 'English, UK',
         // 'am-ET' => 'Amharic',
         // 'af-ZA'=> 'Afrikaans',
@@ -303,7 +303,7 @@ return [
         // 'UA'=>'Ukraine',
         // 'UG'=>'Uganda',
         // 'UK'=>'United Kingdom',
-        // 'US'=>'United States',
+        'US'=>'United States',
         // 'UM'=>'United States Minor Outlying Islands',
         // 'UY'=>'Uruguay',
         // 'UZ'=>'Uzbekistan',

@@ -600,19 +600,11 @@ return [
     'deleted_models' => '삭제된 자산 모델',
     'deleted_users' => '삭제된 사용자',
     'site_name' => '행정재산 관리',
-    '_snipeit_quy_cach_5' => '규격', //key lấy theo trường db_column thuộc bảng custom_fields
-    '_snipeit_don_vi_6' => '단위',
-    '_snipeit_noi_su_dung_7' => '사용 장소',
-    '_snipeit_ngay_di_chuyen_8' => '이동 날짜',
-    '_snipeit_ngay_sua_chua_9' => '수리 날짜',
-    '_snipeit_ngay_tieu_huy_10' =>'폐기 날짜',
-    '_snipeit_bo_phan_4' => '부서',
-    'specification'=>'사양',
-    'select_specification'=>'사양 선택'
-
     'unit' => '단위',
     'location_of_use' => '사용 장소',
     'date_of_movement'  => '이동일',
     'date_of_repair'    => '수리일',
     'date_of_disposal'  => '폐기일',
+    'specification'=>'규격',
+    'select_specification'=>'규격 선택',
 ];

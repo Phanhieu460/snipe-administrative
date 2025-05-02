@@ -15,6 +15,27 @@ class SnipeModel extends Model
         }
         $this->attributes['purchase_date'] = $value;
     }
+    public function setDateOfMovementAttribute($value)
+    {
+        if ($value == '') {
+            $value = null;
+        }
+        $this->attributes['date_of_movement'] = $value;
+    }
+    public function setDateOfRepairAttribute($value)
+    {
+        if ($value == '') {
+            $value = null;
+        }
+        $this->attributes['date_of_repair'] = $value;
+    }
+    public function setDateOfDisposalAttribute($value)
+    {
+        if ($value == '') {
+            $value = null;
+        }
+        $this->attributes['date_of_disposal'] = $value;
+    }
 
     /**
      * @param $value
