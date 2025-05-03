@@ -317,7 +317,6 @@ class AssetsController extends Controller
         $asset->status_id = $request->input('status_id', null);
         $asset->warranty_months = $request->input('warranty_months', null);
         $asset->purchase_cost = $request->input('purchase_cost', null);
-        $asset->department_id           = $request->input('department_id');
         $asset->specification_id        = $request->input('specification_id');
         $asset->purchase_date = $request->input('purchase_date', null);
         $asset->next_audit_date = $request->input('next_audit_date', null);
@@ -355,11 +354,16 @@ class AssetsController extends Controller
 
         // This is an archived or undeployable - we should check the asset back in.
         // Pending is allowed here
+        if ($status && $status->getStatuslabelType() === 'archived' || $status->getStatuslabelType() === 'Undeployable' ) {
+            $asset->department_id = null;
+        }        
+        
         if (($status) && (($status->getStatuslabelType() != 'pending') && ($status->getStatuslabelType() != 'deployable')) && ($target = $asset->assignedTo)) {
             $originalValues = $asset->getRawOriginal();
             $asset->assigned_to = null;
             $asset->assigned_type = null;
             $asset->accepted = null;
+          
             event(new CheckoutableCheckedIn($asset, $target, auth()->user(), 'Checkin on asset update with '.$status->getStatuslabelType().' status', date('Y-m-d H:i:s'), $originalValues));
         }
 

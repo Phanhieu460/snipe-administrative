@@ -538,7 +538,7 @@ return [
     'item_not_found' => 'ID :item_type :id không tồn tại hoặc đã bị xóa.',
     'action_permission_denied' => 'Bạn không có quyền :action ID :item_type :id',
     'action_permission_generic' => 'Bạn không có quyền :action thiết bị này',
-    'edit' => 'sửa',
+    'edit' => 'Chỉnh sửa',
     'action_source' => 'Action Source',
     'or' => 'or',
     'url'                   => 'URL',
@@ -591,7 +591,7 @@ return [
     ],
 
     'breadcrumb_button_actions' => [
-        'edit_item' => 'Edit :name',
+        'edit_item' => 'Chỉnh sửa :name',
         'checkout_item' => 'Checkout :name',
         'checkin_item' => 'Checkin :name',
     ],
