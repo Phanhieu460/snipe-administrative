@@ -136,7 +136,6 @@ class AssetsController extends Controller
             $asset->company_id              = Company::getIdForCurrentUser($request->input('company_id'));
             $asset->model_id                = $request->input('model_id');
             $asset->order_number            = $request->input('order_number');
-            $asset->department_id           = $request->input('department_id');
             $asset->specification_id         = $request->input('specification_id');
             $asset->notes                   = $request->input('notes');
             $asset->created_by              = auth()->id();
@@ -317,7 +316,6 @@ class AssetsController extends Controller
         $asset->status_id = $request->input('status_id', null);
         $asset->warranty_months = $request->input('warranty_months', null);
         $asset->purchase_cost = $request->input('purchase_cost', null);
-        $asset->department_id           = $request->input('department_id');
         $asset->specification_id        = $request->input('specification_id');
         $asset->purchase_date = $request->input('purchase_date', null);
         $asset->next_audit_date = $request->input('next_audit_date', null);
