@@ -6,6 +6,8 @@ use App\Helpers\Helper;
 use App\Models\Accessory;
 use App\Models\AccessoryCheckout;
 use App\Models\Asset;
+use App\Models\User;
+use App\Models\Department;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Database\Eloquent\Collection;
@@ -28,7 +30,19 @@ class AssetsTransformer
     {
         // This uses the getSettings() method so we're pulling from the cache versus querying the settings on single asset
         $setting = Setting::getSettings();
+        //if assigned_to is not null then find the department name then display
+        $assignedUser = User::with('department')->find($asset->assigned_to);
+        if ($asset->assigned_to) {
+            if ($assignedUser && $assignedUser->department) {
+                $asset->department_id = $assignedUser->department_id;
 
+                // Lấy tên department từ department_id
+                $department = Department::find($asset->department_id);
+                if ($department) {
+                    $asset->department_name = $department->name; // Gán tên department
+                }
+            }
+        }
         $array = [
             'id' => (int) $asset->id,
             'name' => e($asset->name),
@@ -69,6 +83,7 @@ class AssetsTransformer
                 'name'=> e($asset->company->name),
             ] : null,
             'department_name' => optional($asset->department)->name,
+            'department_id' => optional($assignedUser)->department_id,
             'specification_name'=> optional($asset->specification)->name,
             'unit' => e($asset->unit),
             'location_of_use' => e($asset->location_of_use),

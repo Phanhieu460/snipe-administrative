@@ -76,11 +76,11 @@
 
     @include ('partials.forms.edit.image-upload', ['image_path' => app('assets_upload_path')])
 
-    @include('partials.forms.edit.department-select', [
+    <!-- @include('partials.forms.edit.department-select', [
         'fieldname' => 'department_id',
         'translated_name' => trans('general.department'),
         
-    ])
+    ]) -->
     @include('partials.forms.edit.specification-select', [
         'fieldname' => 'specification_id',
         'translated_name' => trans('general.specification'),

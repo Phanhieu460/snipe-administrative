@@ -321,7 +321,6 @@ class AssetsController extends Controller
         $asset->specification_id        = $request->input('specification_id');
         $asset->purchase_date = $request->input('purchase_date', null);
         $asset->next_audit_date = $request->input('next_audit_date', null);
-        $asset->department_id           = $request->input('department_id');
         $asset->date_of_movement = $request->input('date_of_movement', null);
         $asset->date_of_repair = $request->input('date_of_repair', null);
         $asset->date_of_disposal = $request->input('date_of_disposal', null);
