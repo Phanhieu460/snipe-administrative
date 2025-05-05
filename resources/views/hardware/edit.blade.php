@@ -87,7 +87,7 @@
        
     ])
     @include ('partials.forms.edit.unit', ['translated_unit' => trans('admin/hardware/form.unit')])
-    @include ('partials.forms.edit.location-of-use', ['translated_location_of_use' => trans('admin/hardware/form.location_of_use')])
+    
     @include ('partials.forms.edit.date-of-movement')
     @include ('partials.forms.edit.date-of-repair')
     @include ('partials.forms.edit.date-of-disposal')

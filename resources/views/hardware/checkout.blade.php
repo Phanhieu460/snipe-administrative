@@ -96,7 +96,7 @@
 
                         @include ('partials.forms.edit.location-select', ['translated_name' => trans('general.location'), 'fieldname' => 'assigned_location', 'style' => 'display:none;'])
 
-
+                        @include ('partials.forms.edit.location-of-use', ['translated_location_of_use' => trans('admin/hardware/form.location_of_use')])
 
                         <!-- Checkout/Checkin Date -->
                         <div class="form-group {{ $errors->has('checkout_at') ? 'error' : '' }}">

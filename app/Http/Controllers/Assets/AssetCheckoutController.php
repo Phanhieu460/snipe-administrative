@@ -88,6 +88,10 @@ class AssetCheckoutController extends Controller
             if ($request->filled('status_id')) {
                 $asset->status_id = $request->get('status_id');
             }
+            if ($request->filled('location_of_use')) {
+                $asset->location_of_use = $request->get('location_of_use');
+            }
+            
 
 
             if(!empty($asset->licenseseats->all())){
