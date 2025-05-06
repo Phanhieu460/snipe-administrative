@@ -196,7 +196,7 @@ return [
     'locations'				=> 'Địa phương',
     'logo_size'				=> 'Logo hình vuông trông đẹp nhất với Logo + ký tự. Kích thước hiển thị tối đa của logo là cao 50px, rộng 500px.  ',
     'logout'				=> 'Thoát',
-    'lookup_by_tag'     => 'Tra cứu theo Thẻ nội dung',
+    'lookup_by_tag'     => 'Tra cứu theo thẻ nội dung',
     'maintenances'          => 'Bảo trì',
     'manage_api_keys'       => 'Quản lý API key',
     'manufacturer'			=> 'Nhà sản xuất',

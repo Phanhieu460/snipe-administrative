@@ -15,7 +15,7 @@ return [
     'upload'                    => 'Tải lên',
     'select_file'				=> 'Chọn tập tin...',
     'select_files'				=> 'Chọn files...',
-    'generate_labels'           => '{1} Nhãn Chung|[2,*] Nhiều Nhãn Chung',
+    'generate_labels'           => '{1} Nhãn Chung|[2,*] In nhãn',
     'send_password_link'        => 'Gửi Liên kết Đặt lại Mật khẩu',
     'go'                        => 'Thực hiện',
     'bulk_actions'              => 'Hàng loạt hành động',
