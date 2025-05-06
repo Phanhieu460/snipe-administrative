@@ -570,18 +570,20 @@ class BulkAssetsController extends Controller
      */
     public function storeCheckout(AssetCheckoutRequest $request) : RedirectResponse | ModelNotFoundException
     {
+
         $this->authorize('checkout', Asset::class);
-    
+
         try {
             $admin = auth()->user();
+
             $target = $this->determineCheckoutTarget();
-    
+
             if (! is_array($request->get('selected_assets'))) {
                 return redirect()->route('hardware.bulkcheckout.show')->withInput()->with('error', trans('admin/hardware/message.checkout.no_assets_selected'));
             }
-    
+
             $asset_ids = array_filter($request->get('selected_assets'));
-    
+
             if (request('checkout_to_type') == 'asset') {
                 foreach ($asset_ids as $asset_id) {
                     if ($target->id == $asset_id) {
@@ -589,66 +591,51 @@ class BulkAssetsController extends Controller
                     }
                 }
             }
-    
             $checkout_at = date('Y-m-d H:i:s');
             if (($request->filled('checkout_at')) && ($request->get('checkout_at') != date('Y-m-d'))) {
                 $checkout_at = e($request->get('checkout_at'));
             }
-    
+
             $expected_checkin = '';
+
             if ($request->filled('expected_checkin')) {
                 $expected_checkin = e($request->get('expected_checkin'));
             }
-    
-            $location_of_use = $request->input('location_of_use'); // 👉 Lấy giá trị location_of_use
-    
+
             $errors = [];
-            DB::transaction(function () use ($target, $admin, $checkout_at, $expected_checkin, &$errors, $asset_ids, $request, $location_of_use) {
+            DB::transaction(function () use ($target, $admin, $checkout_at, $expected_checkin, &$errors, $asset_ids, $request) { //NOTE: $errors is passsed by reference!
                 foreach ($asset_ids as $asset_id) {
                     $asset = Asset::findOrFail($asset_id);
                     $this->authorize('checkout', $asset);
-    
-                    $checkout_success = $asset->checkOut(
-                        $target,
-                        $admin,
-                        $checkout_at,
-                        $expected_checkin,
-                        e($request->get('note')),
-                        $asset->name,
-                        null
-                    );
-    
-                    // Cập nhật location_id nếu có
+
+                    $checkout_success = $asset->checkOut($target, $admin, $checkout_at, $expected_checkin, e($request->get('note')), $asset->name, null);
+
+                    //TODO - I think this logic is duplicated in the checkOut method?
                     if ($target->location_id != '') {
                         $asset->location_id = $target->location_id;
+                        // TODO - I don't know why this is being saved without events
+                        $asset::withoutEvents(function () use ($asset) {
+                            $asset->save();
+                        });
                     }
-    
-                    // 👉 Thêm đoạn cập nhật location_of_use
-                    if (!empty($location_of_use)) {
-                        $asset->location_of_use = $location_of_use;
-                    }
-    
-                    // 👉 Lưu lại
-                    $asset::withoutEvents(function () use ($asset) {
-                        $asset->save();
-                    });
-    
+
                     if (!$checkout_success) {
                         $errors = array_merge_recursive($errors, $asset->getErrors()->toArray());
                     }
                 }
             });
-    
+
             if (! $errors) {
+                // Redirect to the new asset page
                 return redirect()->to('hardware')->with('success', trans_choice('admin/hardware/message.multi-checkout.success', $asset_ids));
             }
-    
+            // Redirect to the asset management page with error
             return redirect()->route('hardware.bulkcheckout.show')->withInput()->with('error', trans_choice('admin/hardware/message.multi-checkout.error', $asset_ids))->withErrors($errors);
         } catch (ModelNotFoundException $e) {
             return redirect()->route('hardware.bulkcheckout.show')->with('error', $e->getErrors());
         }
+        
     }
-    
     public function restore(Request $request) : RedirectResponse
     {
         $this->authorize('update', Asset::class);

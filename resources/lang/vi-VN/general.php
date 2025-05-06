@@ -46,7 +46,7 @@ return [
     'bad_data'      		=> 'Không tìm thấy bất cứ gì. Có thể dữ liệu bị mất?',
     'bulkaudit'             => 'Kiểm toán hàng loạt',
     'bulkaudit_status'      => 'Trạng thái kiểm tra',
-    'bulk_checkout'  		=> 'Cấp phát hàng loạt',
+    'bulk_checkout'  		=> 'Thanh toán hàng loạt',
     'bulk_edit'             => 'Chỉnh sửa hàng loạt',
     'bulk_delete'           => 'Xoá hàng loạt',
     'bulk_actions'          => 'Hàng loạt hành động',

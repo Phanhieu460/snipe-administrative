@@ -32,7 +32,7 @@ return [
     'help_checkout'		=> 'Nếu bạn muốn cấp phát tài sản này ngay lập tức, lựa chọn "Sẵn sàng để cấp phát" từ danh sách tình trạng bên trên. ',
     'mac_address'		=> 'Địa chỉ MAC',
     'manufacturer'		=> 'Nhà sản xuất',
-    'model'				=> 'Kiểu tài sản', // DÙng kiểu tài sản này để hiển thị là tên tài sản luôn
+    'model'				=> 'Tên kiểu tài sản', // DÙng kiểu tài sản này để hiển thị là tên tài sản luôn
     'months'			=> 'tháng',
     'name'				=> 'Tên tài sản',
     'notes'				=> 'Ghi chú',
