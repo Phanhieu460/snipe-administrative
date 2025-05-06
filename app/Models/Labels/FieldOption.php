@@ -27,6 +27,16 @@ class FieldOption {
 
             return $asset->assignedTo ? $asset->assignedTo->present()->fullName() : null;
         }
+        
+        if ($dataPath[0] === 'assignedTo') {
+            if ($asset->relationLoaded('assignedTo')) {
+                // If the "assignedTo" relationship was eager loaded then the way to get the
+                // relationship changes from $asset->assignedTo to $asset->assigned.
+                return $asset->assigned ? $asset->assigned->present()->fullName() : null;
+            }
+
+            return $asset->assignedTo ? $asset->assignedTo->present()->fullName() : null;
+        }
 
         // Handle Laravel's stupid Carbon datetime casting
         if ($dataPath[0] === 'purchase_date') {

@@ -78,6 +78,7 @@ class AssetCheckinController extends Controller
         if ($asset->assignedType() == Asset::USER) {
             $user = $asset->assignedTo;
         }
+        $asset->date_of_movement = null;
         $asset->location_of_use = null;
         $asset->expected_checkin = null;
         $asset->last_checkin = now();
