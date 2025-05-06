@@ -13,15 +13,17 @@ class LabelWriter_2112283 extends LabelWriter
     private const LABEL_MARGIN   = - 0.35;
     private const FIELD_SIZE     =   2.80;
     private const FIELD_MARGIN   =   0.15;
+    private const LOGO_MAX_WIDTH =  15.00;
+    private const LOGO_MARGIN    =   2.20;
 
     public function getUnit()  { return 'mm'; }
-    public function getWidth() { return 54; }
-    public function getHeight() { return 25; }
+    public function getWidth() { return 60; }
+    public function getHeight() { return 50; }
     public function getSupportAssetTag()  { return true; }
     public function getSupport1DBarcode() { return true; }
     public function getSupport2DBarcode() { return true; }
-    public function getSupportFields()    { return 5; }
-    public function getSupportLogo()      { return false; }
+    public function getSupportFields()    { return 6; }
+    public function getSupportLogo()      { return true; }
     public function getSupportTitle()     { return true; }
 
     public function preparePDF($pdf) {}
@@ -32,6 +34,7 @@ class LabelWriter_2112283 extends LabelWriter
         $currentX = $pa->x1;
         $currentY = $pa->y1;
         $usableWidth = $pa->w;
+        $usableHeight = $pa->h;
 
         $barcodeSize = $pa->h - self::TAG_SIZE;
 
@@ -54,21 +57,21 @@ class LabelWriter_2112283 extends LabelWriter
         if ($record->has('title')) {
             static::writeText(
                 $pdf, $record->get('title'),
-                $currentX, $currentY,
-                'freesans', 'b', self::TITLE_SIZE, 'L',
+                $currentX +15, $currentY + 4.5,
+                'freesans', 'b', self::TITLE_SIZE + 0.75, 'L',
                 $usableWidth, self::TITLE_SIZE, true, 0
             );
-            $currentY += self::TITLE_SIZE + self::TITLE_MARGIN;
+            $currentY += self::TITLE_SIZE + self::TITLE_MARGIN +2.5;
         }
 
         foreach ($record->get('fields') as $field) {
             static::writeText(
                 $pdf, (($field['label']) ? $field['label'].' ' : '') . $field['value'],
-                $currentX, $currentY,
+                $currentX, $currentY +5,
                 'freesans', '', self::FIELD_SIZE, 'L',
                 $usableWidth, self::FIELD_SIZE, true, 0, 0.3
             );
-            $currentY += self::FIELD_SIZE + self::FIELD_MARGIN;
+            $currentY += self::FIELD_SIZE + self::FIELD_MARGIN + 4;
         }
 
         if ($record->has('barcode1d')) {
@@ -76,6 +79,18 @@ class LabelWriter_2112283 extends LabelWriter
                 $pdf, $record->get('barcode1d')->content, $record->get('barcode1d')->type,
                 $currentX, $barcodeSize + self::BARCODE_MARGIN, $usableWidth - self::TAG_SIZE, self::TAG_SIZE
             );
+        }
+        // $currentX += $usableWidth + (self::LOGO_MARGIN/2);
+
+        if ($record->has('logo')) {
+            $logoSize = static::writeImage(
+                $pdf, $record->get('logo'),
+                $currentX , $pa->y1 + 2.5,
+                self::LOGO_MAX_WIDTH, $usableHeight,
+                'L', 'T', 300, true, false, 0
+            );
+            $currentX += $logoSize[0] + self::LOGO_MARGIN;
+            $usableWidth -= $logoSize[0] + self::LOGO_MARGIN;
         }
     }
 

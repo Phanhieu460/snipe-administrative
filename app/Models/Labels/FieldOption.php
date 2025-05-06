@@ -3,6 +3,8 @@
 namespace App\Models\Labels;
 
 use App\Models\Asset;
+use App\Models\Department;
+use App\Models\User;
 use Illuminate\Support\Collection;
 
 class FieldOption {
@@ -14,7 +16,6 @@ class FieldOption {
 
     public function getValue(Asset $asset) {
         $dataPath = collect(explode('.', $this->dataSource));
-
         // assignedTo directly on the asset is a special case where
         // we want to avoid returning the property directly
         // and instead return the entity's presented name.
@@ -22,20 +23,34 @@ class FieldOption {
             if ($asset->relationLoaded('assignedTo')) {
                 // If the "assignedTo" relationship was eager loaded then the way to get the
                 // relationship changes from $asset->assignedTo to $asset->assigned.
+
                 return $asset->assigned ? $asset->assigned->present()->fullName() : null;
             }
 
             return $asset->assignedTo ? $asset->assignedTo->present()->fullName() : null;
         }
         
-        if ($dataPath[0] === 'assignedTo') {
+
+        if ($dataPath[0] === 'department') {
             if ($asset->relationLoaded('assignedTo')) {
                 // If the "assignedTo" relationship was eager loaded then the way to get the
                 // relationship changes from $asset->assignedTo to $asset->assigned.
-                return $asset->assigned ? $asset->assigned->present()->fullName() : null;
+                $assignedUser = User::with('department')->find($asset->assigned_to);
+                if ($asset->assigned_to) {
+                    if ($assignedUser && $assignedUser->department) {
+                        $asset->department_id = $assignedUser->department_id;
+        
+                        // Lấy tên department từ department_id
+                        $department = Department::find($asset->department_id);
+                        if ($department) {
+                            $asset->department_name = $department->name; // Gán tên department
+                        }
+                    }
+                }
+                return $asset->assigned ? '' : null;
             }
 
-            return $asset->assignedTo ? $asset->assignedTo->present()->fullName() : null;
+            return $asset->assignedTo ? $asset->assignedTo->department_name : null;
         }
 
         // Handle Laravel's stupid Carbon datetime casting

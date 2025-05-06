@@ -225,6 +225,7 @@ class AssetsTransformer
                     'email'=> ($asset->assigned->email) ? e($asset->assigned->email) : null,
                     'employee_number' =>  ($asset->assigned->employee_num) ? e($asset->assigned->employee_num) : null,
                     'type' => 'user',
+                    
                 ] : null;
         }
 
