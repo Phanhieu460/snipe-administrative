@@ -47,7 +47,7 @@ class FieldOption {
                         }
                     }
                 }
-                return $asset->assigned ? '' : null;
+                return $asset->assigned ? $asset->department_name : null;
             }
 
             return $asset->assignedTo ? $asset->assignedTo->department_name : null;

@@ -146,22 +146,6 @@ class AssetPresenter extends Presenter
                 'formatter' => 'manufacturersLinkObjFormatter',
             ],
             [
-                'field' => 'supplier',
-                'searchable' => true,
-                'sortable' => true,
-                'title' => trans('general.supplier'),
-                'visible' => false,
-                'formatter' => 'suppliersLinkObjFormatter',
-            ],
-            [
-                'field' => 'purchase_date',
-                'searchable' => true,
-                'sortable' => true,
-                'visible' => false,
-                'title' => trans('general.purchase_date'),
-                'formatter' => 'dateDisplayFormatter',
-            ],
-            [
                 'field' => 'age',
                 'searchable' => false,
                 'sortable' => false,
@@ -339,13 +323,6 @@ class AssetPresenter extends Presenter
 
             ],
             [
-                'field' => 'department_name',
-                'title' => trans('general.department'),
-                'sortable' => true,
-                'switchable' => true,
-                'visible' => true,
-            ],
-            [
                 'field' => 'specification_name',
                 'title' => trans('general.specification'),
                 'sortable' => true,
@@ -353,8 +330,31 @@ class AssetPresenter extends Presenter
                 'visible' => true,
             ],
             [
+                'field' => 'supplier',
+                'searchable' => true,
+                'sortable' => true,
+                'title' => trans('general.supplier'),
+                'visible' => false,
+                'formatter' => 'suppliersLinkObjFormatter',
+            ],
+            [
                 'field' => 'unit',
                 'title' => trans('general.unit'),
+                'sortable' => true,
+                'switchable' => true,
+                'visible' => true,
+            ],
+            [
+                'field' => 'purchase_date',
+                'searchable' => true,
+                'sortable' => true,
+                'visible' => false,
+                'title' => trans('general.purchase_date'),
+                'formatter' => 'dateDisplayFormatter',
+            ],
+            [
+                'field' => 'department_name',
+                'title' => trans('general.department'),
                 'sortable' => true,
                 'switchable' => true,
                 'visible' => true,
