@@ -579,7 +579,6 @@ class BulkAssetsController extends Controller
             if (! is_array($request->get('selected_assets'))) {
                 return redirect()->route('hardware.bulkcheckout.show')->withInput()->with('error', trans('admin/hardware/message.checkout.no_assets_selected'));
             }
-    
             $asset_ids = array_filter($request->get('selected_assets'));
     
             if (request('checkout_to_type') == 'asset') {
@@ -589,7 +588,6 @@ class BulkAssetsController extends Controller
                     }
                 }
             }
-    
             $checkout_at = date('Y-m-d H:i:s');
             if (($request->filled('checkout_at')) && ($request->get('checkout_at') != date('Y-m-d'))) {
                 $checkout_at = e($request->get('checkout_at'));
@@ -599,15 +597,12 @@ class BulkAssetsController extends Controller
             if ($request->filled('expected_checkin')) {
                 $expected_checkin = e($request->get('expected_checkin'));
             }
-    
             $location_of_use = $request->input('location_of_use'); // 👉 Lấy giá trị location_of_use
-    
             $errors = [];
             DB::transaction(function () use ($target, $admin, $checkout_at, $expected_checkin, &$errors, $asset_ids, $request, $location_of_use) {
                 foreach ($asset_ids as $asset_id) {
                     $asset = Asset::findOrFail($asset_id);
                     $this->authorize('checkout', $asset);
-    
                     $checkout_success = $asset->checkOut(
                         $target,
                         $admin,
@@ -617,26 +612,23 @@ class BulkAssetsController extends Controller
                         $asset->name,
                         null
                     );
-    
-                    // Cập nhật location_id nếu có
                     if ($target->location_id != '') {
                         $asset->location_id = $target->location_id;
                     }
-    
-                    // 👉 Thêm đoạn cập nhật location_of_use
                     if (!empty($location_of_use)) {
                         $asset->location_of_use = $location_of_use;
                     }
-    
-                    // 👉 Lưu lại
+                    if ($target instanceof \App\Models\User && $target->department) {
+                        $asset->department_name = $target->department->name;
+                    }
                     $asset::withoutEvents(function () use ($asset) {
                         $asset->save();
                     });
-    
+                
                     if (!$checkout_success) {
                         $errors = array_merge_recursive($errors, $asset->getErrors()->toArray());
                     }
-                }
+                }                
             });
     
             if (! $errors) {
