@@ -711,7 +711,7 @@ dir="{{ Helper::determineLanguageDirection() }}">
                                     @can('view', \App\Models\Department::class)
                                         <li>
                                             <a href="{{ route('departments.index') }}" {{ (Request::is('/departments') ? ' class="active"' : '') }}>
-                                                {{ trans('general.departments') }}
+                                                {{ trans('general.department') }}
                                             </a>
                                         </li>
                                     @endcan
@@ -915,7 +915,8 @@ dir="{{ Helper::determineLanguageDirection() }}">
                 </section>
 
             </div><!-- /.content-wrapper -->
-            <footer class="main-footer hidden-print" style="display:grid;flex-direction:column;">
+
+            <!-- <footer class="main-footer hidden-print" style="display:grid;flex-direction:column;">
 
                 <div class="1hidden-xs pull-left">
                     <div class="pull-left" >
@@ -953,7 +954,7 @@ dir="{{ Helper::determineLanguageDirection() }}">
                         </div>
                     @endif
                 </div>
-            </footer>
+            </footer> -->
         </div><!-- ./wrapper -->
 
 

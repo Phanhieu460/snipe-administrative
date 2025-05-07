@@ -274,7 +274,7 @@ class BreadcrumbsServiceProvider extends ServiceProvider
          */
         Breadcrumbs::for('departments.index', fn (Trail $trail) =>
         $trail->parent('home', route('home'))
-            ->push(trans('general.departments'), route('departments.index'))
+            ->push(trans('general.department'), route('departments.index'))
         );
 
         Breadcrumbs::for('departments.create', fn (Trail $trail) =>

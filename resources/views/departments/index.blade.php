@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-    {{ trans('general.departments') }}
+    {{ trans('general.department') }}
     @parent
 @stop
 

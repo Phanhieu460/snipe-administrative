@@ -599,7 +599,7 @@ return [
     'generic_model_not_found' => ':model을(를) 찾을 수 없거나 액세스할 권한이 없습니다.',
     'deleted_models' => '삭제된 자산 모델',
     'deleted_users' => '삭제된 사용자',
-    'site_name' => '행정재산 관리',
+    'site_name' => '총무자산 관리',
     'unit' => '단위',
     'location_of_use' => '사용 장소',
     'date_of_movement'  => '이동일',

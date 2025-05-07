@@ -328,6 +328,7 @@ class AssetPresenter extends Presenter
                 'sortable' => true,
                 'switchable' => true,
                 'visible' => true,
+                'searchable' => true,
             ],
             [
                 'field' => 'supplier',
@@ -355,7 +356,7 @@ class AssetPresenter extends Presenter
             [
                 'field' => 'department_name',
                 'title' => trans('general.department'),
-                'sortable' => true,
+                'sortable' => false,
                 'switchable' => true,
                 'visible' => true,
             ],

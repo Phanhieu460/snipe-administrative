@@ -20,7 +20,7 @@ return [
     'all_assets'			=> 'Tất cả tài sản',
     'all'       			=> 'Tất cả',
     'archived'              => 'Đã lưu trữ',
-    'asset_models'			=> 'Tên kiểu tài sản',
+    'asset_models'			=> 'Kiểu tài sản',
     'asset_model'			=> 'Mô hình',
     'asset'					=> 'Tài sản',
     'asset_report'          => 'Báo cáo tài sản',

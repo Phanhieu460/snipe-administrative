@@ -202,7 +202,6 @@ class Asset extends Depreciable
         'last_checkin',
         'last_checkout',
         'asset_eol_date',
-        'department_id',
         'specification_id',
         'unit',
         'location_of_use',

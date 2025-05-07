@@ -42,6 +42,6 @@ return array(
         'error'   => 'There was a problem while trying to reset your password, please try again.',
         'success' => 'Your password has been successfully reset.',
     ),
-
+    'resetpassword' => 'Please contact the IT department.'
 
 );
