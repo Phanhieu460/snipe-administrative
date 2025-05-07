@@ -115,7 +115,7 @@ class AssetsTransformer
             'deleted_at' => Helper::getFormattedDateObject($asset->deleted_at, 'datetime'),
             'purchase_date' => Helper::getFormattedDateObject($asset->purchase_date, 'date'),
             'age' => $asset->purchase_date ? $asset->purchase_date->locale(app()->getLocale())->diffForHumans() : '',
-            'last_checkout' => Helper::getFormattedDateObject($asset->last_checkout, 'datetime'),
+            'last_checkout' => Helper::getFormattedDateObject($asset->last_checkout, 'date'),
             'last_checkin' => Helper::getFormattedDateObject($asset->last_checkin, 'datetime'),
             'expected_checkin' => Helper::getFormattedDateObject($asset->expected_checkin, 'date'),
             'purchase_cost' => Helper::formatCurrencyOutput($asset->purchase_cost),

@@ -55,7 +55,7 @@ return [
     'byod_help'             => 'Thiết bị này được sử dụng bởi người dùng',
     'bystatus'              => 'Trạng thái',
     'cancel'  				=> 'Hủy',
-    'categories'			=> 'Danh mục',
+    'categories'			=> 'Loại tài sản',
     'category'				=> 'Thể loại',
     'change' 		        => 'Vào / ra',
     'changeemail'  			=> 'Thay đổi địa chỉ Email',
