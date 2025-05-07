@@ -177,6 +177,7 @@ class Asset extends Depreciable
         'date_of_movement',
         'date_of_repair',
         'date_of_disposal',
+        'department_name'
     ];
 
     use Searchable;
@@ -208,6 +209,8 @@ class Asset extends Depreciable
         'date_of_movement',
         'date_of_repair',
         'date_of_disposal',
+        'department_name',
+       
     ];
 
     /**
