@@ -13,7 +13,7 @@ class LabelWriter_2112283 extends LabelWriter
     private const LABEL_MARGIN   = - 0.35;
     private const FIELD_SIZE     =   2.80;
     private const FIELD_MARGIN   =   0.15;
-    private const LOGO_MAX_WIDTH =  15.00;
+    private const LOGO_MAX_WIDTH =  10.00;
     private const LOGO_MARGIN    =   2.20;
 
     public function getUnit()  { return 'mm'; }
@@ -57,21 +57,21 @@ class LabelWriter_2112283 extends LabelWriter
         if ($record->has('title')) {
             static::writeText(
                 $pdf, $record->get('title'),
-                $currentX +15, $currentY + 4.5,
-                'freesans', 'b', self::TITLE_SIZE + 0.75, 'L',
+                $currentX + 5, $currentY,
+                'freesans', 'b', self::TITLE_SIZE + 0.75, 'C',
                 $usableWidth, self::TITLE_SIZE, true, 0
             );
-            $currentY += self::TITLE_SIZE + self::TITLE_MARGIN +2.5;
+            $currentY += self::TITLE_SIZE + self::TITLE_MARGIN + 3;
         }
 
         foreach ($record->get('fields') as $field) {
             static::writeText(
                 $pdf, (($field['label']) ? $field['label'].' ' : '') . $field['value'],
-                $currentX, $currentY +5,
+                $currentX, $currentY,
                 'freesans', '', self::FIELD_SIZE, 'L',
-                $usableWidth, self::FIELD_SIZE, true, 0, 0.3
+                $usableWidth, self::FIELD_SIZE + 4.5, true, 0, 0.2
             );
-            $currentY += self::FIELD_SIZE + self::FIELD_MARGIN + 4;
+            $currentY += self::FIELD_SIZE + self::FIELD_MARGIN + 4.5;
         }
 
         if ($record->has('barcode1d')) {
@@ -81,17 +81,17 @@ class LabelWriter_2112283 extends LabelWriter
             );
         }
         // $currentX += $usableWidth + (self::LOGO_MARGIN/2);
-
         if ($record->has('logo')) {
             $logoSize = static::writeImage(
                 $pdf, $record->get('logo'),
-                $currentX , $pa->y1 + 2.5,
-                self::LOGO_MAX_WIDTH, $usableHeight,
+                $currentX, $pa->y1 - 1,
+                10, 10,
                 'L', 'T', 300, true, false, 0
             );
             $currentX += $logoSize[0] + self::LOGO_MARGIN;
             $usableWidth -= $logoSize[0] + self::LOGO_MARGIN;
         }
+        
     }
 
 }

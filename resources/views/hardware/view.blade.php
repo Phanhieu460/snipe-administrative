@@ -482,6 +482,28 @@
                                         </div>
                                     @endif
 
+                                    @if ($asset->department_name)
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <strong>{{ trans('general.department') }}</strong>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <a href="{{ url('/departments/' . $asset->department_id) }}">{{ $asset->department_name }}</a>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if ($asset->location_of_use)
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <strong>{{ trans('general.location_of_use') }}</strong>
+                                            </div>
+                                            <div class="col-md-9">
+                                                {{ $asset->location_of_use }}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    
+
                                     @if ($asset->name)
                                         <div class="row">
                                             <div class="col-md-3">
@@ -520,7 +542,36 @@
                                             </div>
                                         </div>
                                     @endif
-
+                                    @if ($asset->date_of_movement)
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <strong>{{ trans('general.date_of_movement') }}</strong>
+                                            </div>
+                                            <div class="col-md-9">
+                                                {{ $asset->date_of_movement }}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if ($asset->date_of_repair)
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <strong>{{ trans('general.date_of_repair') }}</strong>
+                                            </div>
+                                            <div class="col-md-9">
+                                                {{ $asset->date_of_repair }}
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if ($asset->date_of_disposal)
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <strong>{{ trans('general.date_of_disposal') }}</strong>
+                                            </div>
+                                            <div class="col-md-9">
+                                                {{ $asset->date_of_disposal }}
+                                            </div>
+                                        </div>
+                                    @endif
                                     @if ((isset($audit_log)) && ($audit_log->created_at))
                                         <div class="row">
                                             <div class="col-md-3">

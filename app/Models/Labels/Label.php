@@ -32,7 +32,8 @@ abstract class Label
      *
      * @return int
      */
-    public function getRotation() {
+    public function getRotation()
+    {
         return 0;
     }
 
@@ -77,42 +78,42 @@ abstract class Label
      * @return float
      */
     public abstract function getMarginRight();
-    
+
     /**
      * Returns whether the template supports an asset tag.
      * 
      * @return bool
      */
     public abstract function getSupportAssetTag();
-    
+
     /**
      * Returns whether the template supports a 1D barcode.
      * 
      * @return bool
      */
     public abstract function getSupport1DBarcode();
-    
+
     /**
      * Returns whether the template supports a 2D barcode.
      * 
      * @return bool
      */
     public abstract function getSupport2DBarcode();
-    
+
     /**
      * Returns the number of fields the template supports.
      * 
      * @return int
      */
     public abstract function getSupportFields();
-    
+
     /**
      * Returns whether the template supports a logo.
      * 
      * @return bool
      */
     public abstract function getSupportLogo();
-    
+
     /**
      * Returns whether the template supports a title.
      * 
@@ -141,7 +142,8 @@ abstract class Label
      * @param  TCPDF       $pdf   The TCPDF instance
      * @param  Collection  $data  The data
      */
-    public function writeAll(TCPDF $pdf, Collection $data) {
+    public function writeAll(TCPDF $pdf, Collection $data)
+    {
         $data->each(function ($record, $index) use ($pdf) {
             $pdf->AddPage();
             $this->write($pdf, $record);
@@ -153,7 +155,8 @@ abstract class Label
      *
      * @return string
      */
-    public final function getName() {
+    public final function getName()
+    {
         $refClass = new \ReflectionClass(Label::class);
         return str_replace($refClass->getNamespaceName() . '\\', '', get_class($this));
     }
@@ -165,7 +168,8 @@ abstract class Label
      *
      * @return string
      */
-    public final function getOrientation() {
+    public final function getOrientation()
+    {
         return ($this->getWidth() >= $this->getHeight()) ? 'L' : 'P';
     }
 
@@ -174,7 +178,8 @@ abstract class Label
      *
      * @return object [ 'x1'=>0.00, 'y1'=>0.00, 'x2'=>0.00, 'y2'=>0.00, 'w'=>0.00, 'h'=>0.00 ]
      */
-    public final function getPrintableArea() {
+    public final function getPrintableArea()
+    {
         return (object)[
             'x1' => $this->getMarginLeft(),
             'y1' => $this->getMarginTop(),
@@ -202,7 +207,8 @@ abstract class Label
      * @param  int     $border  Thickness of border. Default = 0.
      * @param  int     $spacing Letter spacing. Default = 0.
      */
-    public final function writeText(TCPDF $pdf, $text, $x, $y, $font=null, $style=null, $size=null, $align='L', $width=null, $height=null, $squash=false, $border=0, $spacing=0) {
+    public final function writeText(TCPDF $pdf, $text, $x, $y, $font = null, $style = null, $size = null, $align = 'L', $width = null, $height = null, $squash = false, $border = 0, $spacing = 0)
+    {
         $prevFamily = $pdf->getFontFamily();
         $prevStyle = $pdf->getFontStyle();
         $prevSizePt = $pdf->getFontSizePt();
@@ -229,7 +235,9 @@ abstract class Label
                 ];
             });
 
-        $textWidth = $parts->reduce(function ($carry, $part) { return $carry += $part['text_width']; });
+        $textWidth = $parts->reduce(function ($carry, $part) {
+            return $carry += $part['text_width'];
+        });
         $cellWidth = !empty($width) ? $width : $textWidth;
 
         if ($squash && ($textWidth > 0)) {
@@ -248,17 +256,34 @@ abstract class Label
             $pdf->setLineWidth($prevLineWidth);
         }
 
-        switch($align) {
-            case 'R': $startX = ($x + $cellWidth) - min($cellWidth, $textWidth); break;
-            case 'C': $startX = ($x + ($cellWidth / 2)) - (min($cellWidth, $textWidth) / 2); break;
+        switch ($align) {
+            case 'R':
+                $startX = ($x + $cellWidth) - min($cellWidth, $textWidth);
+                break;
+            case 'C':
+                $startX = ($x + ($cellWidth / 2)) - (min($cellWidth, $textWidth) / 2);
+                break;
             case 'L':
-            default: $startX = $x; break;
+            default:
+                $startX = $x;
+                break;
         }
 
         $parts->reduce(function ($currentX, $part) use ($pdf, $y, $cellHeight) {
-            $pdf->SetXY($currentX, $y);
-            $pdf->setFont($part['font_family'], $part['font_style'], $part['font_size']);
-            $pdf->Cell($part['text_width'], $cellHeight, $part['text'], 0, 0, '', false, '', 1, true);
+            
+            if (strpos($part['text'], ":") !== false) {
+                $label = trim(explode(':', $part['text'], 2)[0]);
+                $value = trim(explode(':', $part['text'], 2)[1]);
+                $pdf->SetXY($currentX, $y);
+                $pdf->setFont($part['font_family'], 'b', $part['font_size']);
+                $pdf->Cell(20, $cellHeight, $label, 1, 0, 'C', false, '', 1, true);
+                $pdf->setFont($part['font_family'], $part['font_style'], $part['font_size']);
+                $pdf->Cell(35, $cellHeight, $value, 1, 0, 'C', false, '', 1, true);
+            } else {
+                $pdf->SetXY($currentX, $y);
+                $pdf->setFont($part['font_family'], $part['font_style'], $part['font_size']);
+                $pdf->Cell($part['text_width'], $cellHeight, $part['text'], 0, 0, '', false, '', 1, true);
+            }
             return $currentX += $part['text_width'];
         }, $startX);
 
@@ -284,13 +309,14 @@ abstract class Label
      * 
      * @return array   Returns the final calculated size [w,h]
      */
-    public final function writeImage(TCPDF $pdf, $image, $x, $y, $width=null, $height=null, $halign='L', $valign='L', $dpi=300, $resize=false, $stretch=false, $border=0) {
+    public final function writeImage(TCPDF $pdf, $image, $x, $y, $width = null, $height = null, $halign = 'L', $valign = 'L', $dpi = 300, $resize = false, $stretch = false, $border = 0)
+    {
 
-        if (empty($image)) return [0,0];
-        
+        if (empty($image)) return [0, 0];
+
         $imageInfo = getimagesize($image);
-        if (!$imageInfo) return [0,0]; // TODO: SVG or other
-        
+        if (!$imageInfo) return [0, 0]; // TODO: SVG or other
+
         $imageWidthPx = $imageInfo[0];
         $imageHeightPx = $imageInfo[1];
         $imageType = image_type_to_extension($imageInfo[2], false);
@@ -307,11 +333,11 @@ abstract class Label
             // Assign specified parameters
             $limitWidth = $width;
             $limitHeight = $height;
-            
+
             // If not, try calculating from the other dimension
             $limitWidth = ($limitWidth > 0) ? $limitWidth : ($limitHeight / $imageRatio);
             $limitHeight = ($limitHeight > 0) ? $limitHeight : ($limitWidth * $imageRatio);
-            
+
             // If not, just use the image size
             $limitWidth = ($limitWidth > 0) ? $limitWidth : $imageWidth;
             $limitHeight = ($limitHeight > 0) ? $limitHeight : $imageHeight;
@@ -342,23 +368,35 @@ abstract class Label
 
         // Horizontal Position
         switch ($halign) {
-            case 'R': $originX = ($x + $containerWidth) - $outputWidth; break;
-            case 'C': $originX = ($x + ($containerWidth / 2)) - ($outputWidth / 2); break;
+            case 'R':
+                $originX = ($x + $containerWidth) - $outputWidth;
+                break;
+            case 'C':
+                $originX = ($x + ($containerWidth / 2)) - ($outputWidth / 2);
+                break;
             case 'L':
-            default: $originX = $x; break;
+            default:
+                $originX = $x;
+                break;
         }
-        
+
         // Vertical Position
         switch ($valign) {
-            case 'B': $originY = ($y + $containerHeight) - $outputHeight; break;
-            case 'C': $originY = ($y + ($containerHeight / 2)) - ($outputHeight / 2); break;
+            case 'B':
+                $originY = ($y + $containerHeight) - $outputHeight;
+                break;
+            case 'C':
+                $originY = ($y + ($containerHeight / 2)) - ($outputHeight / 2);
+                break;
             case 'T':
-            default: $originY = $y; break;
+            default:
+                $originY = $y;
+                break;
         }
 
         // Actual Image
         $pdf->Image($image, $originX, $originY, $outputWidth, $outputHeight, $imageType, '', '', true);
-        
+
         // Border
         if ($border) {
             $prevLineWidth = $pdf->getLineWidth();
@@ -366,8 +404,8 @@ abstract class Label
             $pdf->Rect($x, $y, $containerWidth, $containerHeight);
             $pdf->setLineWidth($prevLineWidth);
         }
-        
-        return [ $outputWidth, $outputHeight ];
+
+        return [$outputWidth, $outputHeight];
     }
 
     /**
@@ -381,12 +419,13 @@ abstract class Label
      * @param  float   $width   The container width
      * @param  float   $height  The container height
      */
-    public final function write1DBarcode(TCPDF $pdf, $value, $type, $x, $y, $width, $height) {
+    public final function write1DBarcode(TCPDF $pdf, $value, $type, $x, $y, $width, $height)
+    {
         if (empty($value)) return;
         try {
-            $pdf->write1DBarcode($value, $type, $x, $y, $width, $height, null, ['stretch'=>true]);
-        } catch (\Exception|TypeError $e) {
-            Log::debug('The 1D barcode ' . $value . ' is not compliant with the barcode type '. $type);
+            $pdf->write1DBarcode($value, $type, $x, $y, $width, $height, null, ['stretch' => true]);
+        } catch (\Exception | TypeError $e) {
+            Log::debug('The 1D barcode ' . $value . ' is not compliant with the barcode type ' . $type);
         }
     }
 
@@ -401,9 +440,10 @@ abstract class Label
      * @param  float   $width   The container width
      * @param  float   $height  The container height
      */
-    public final function write2DBarcode(TCPDF $pdf, $value, $type, $x, $y, $width, $height) {
+    public final function write2DBarcode(TCPDF $pdf, $value, $type, $x, $y, $width, $height)
+    {
         if (empty($value)) return;
-        $pdf->write2DBarcode($value, $type, $x, $y, $width, $height, null, ['stretch'=>true]);
+        $pdf->write2DBarcode($value, $type, $x, $y, $width, $height, null, ['stretch' => true]);
     }
 
 
@@ -411,26 +451,29 @@ abstract class Label
     /**
      * Checks the template is internally valid
      */
-    public final function validate() : void {
+    public final function validate(): void
+    {
         $this->validateUnits();
         $this->validateSize();
         $this->validateMargins();
         $this->validateSupport();
     }
 
-    private function validateUnits() : void {
-        $validUnits = [ 'pt', 'mm', 'cm', 'in' ];
+    private function validateUnits(): void
+    {
+        $validUnits = ['pt', 'mm', 'cm', 'in'];
         $unit = $this->getUnit();
         if (!in_array(strtolower($unit), $validUnits)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_value', [
                 'name' => 'getUnit()',
-                'expected' => '[ \''.implode('\', \'', $validUnits).'\' ]',
-                'actual' => '\''.$unit.'\''
+                'expected' => '[ \'' . implode('\', \'', $validUnits) . '\' ]',
+                'actual' => '\'' . $unit . '\''
             ]));
         }
     }
 
-    private function validateSize() : void {
+    private function validateSize(): void
+    {
         $width = $this->getWidth();
         if (!is_numeric($width) || is_string($width)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_type', [
@@ -439,7 +482,7 @@ abstract class Label
                 'actual' => gettype($width)
             ]));
         }
-        
+
         $height = $this->getHeight();
         if (!is_numeric($height) || is_string($height)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_type', [
@@ -450,7 +493,8 @@ abstract class Label
         }
     }
 
-    private function validateMargins() : void {
+    private function validateMargins(): void
+    {
         $marginTop = $this->getMarginTop();
         if (!is_numeric($marginTop) || is_string($marginTop)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_type', [
@@ -459,7 +503,7 @@ abstract class Label
                 'actual' => gettype($marginTop)
             ]));
         }
-        
+
         $marginBottom = $this->getMarginBottom();
         if (!is_numeric($marginBottom) || is_string($marginBottom)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_type', [
@@ -477,7 +521,7 @@ abstract class Label
                 'actual' => gettype($marginLeft)
             ]));
         }
-        
+
         $marginRight = $this->getMarginRight();
         if (!is_numeric($marginRight) || is_string($marginRight)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_type', [
@@ -488,7 +532,8 @@ abstract class Label
         }
     }
 
-    private function validateSupport() : void {
+    private function validateSupport(): void
+    {
         $support1D = $this->getSupport1DBarcode();
         if (!is_bool($support1D)) {
             throw new \UnexpectedValueException(trans('admin/labels/message.invalid_return_type', [
@@ -539,7 +584,7 @@ abstract class Label
 
     /**
      * Public Static Functions
-    */
+     */
 
     /**
      * Find size of a page by its format.
@@ -550,7 +595,8 @@ abstract class Label
      * 
      * @return object  (object)[ 'width' => (float)123.4, 'height' => (float)123.4 ]
      */
-    public static function fromFormat($format, $orientation='L', $unit='mm', $round=false) {
+    public static function fromFormat($format, $orientation = 'L', $unit = 'mm', $round = false)
+    {
         $size = collect(TCPDF_STATIC::getPageSizeFromFormat(strtoupper($format)))
             ->sort()
             ->map(function ($value) use ($unit) {
@@ -574,7 +620,8 @@ abstract class Label
      * @param  string|Arrayable|array|null  $path  Label path[s]
      * @return Collection|Label|null
      */
-    public static function find($name=null) {
+    public static function find($name = null)
+    {
         // Find many
         if (is_array($name) || $name instanceof Arrayable) {
             $labels = collect($name)
@@ -609,7 +656,4 @@ abstract class Label
                 return new $name();
             });
     }
-
-    
-
 }
